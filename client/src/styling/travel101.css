@@ -1,20 +1,30 @@
 .travel-page{
     padding-top: 200px;
-    padding-bottom: 250px;
+    padding-bottom: 50px;
     margin: 0 45px 0 45px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
 .list-container{
+    width: 80%;
+    margin-bottom: 100px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
+    border: 1px solid #7e4c42;
+    border-radius: 2px;
+    color: #7e4c42;
+    box-shadow: 0px 0px 20px 2px rgba(126, 76, 66, 0.5)
 }
 
 .list-header{
     text-align: center;
-    padding-bottom: 35px;
+    padding: 35px 0;
 }
 
 .packing-list{
@@ -22,6 +32,16 @@
     grid-template-columns: repeat(3, 1fr);
     width: 80%;
     padding-left: 10%;
+    padding-bottom: 50px;
+    padding-top: 40px;
+}
+.tips-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+    padding-left: 10%;
+    padding-bottom: 50px;
+    padding-top: 40px;
 }
 
 li{

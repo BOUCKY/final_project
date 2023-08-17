@@ -40,7 +40,7 @@ function TripForm({user, place=null, addNewTrip}){
 
     return(
         <div className="trip-form">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="form">
                 <label htmlFor="place-id">City:
                     <input
                         onChange={(e) => setInputPlace(e.target.value)}
@@ -71,7 +71,7 @@ function TripForm({user, place=null, addNewTrip}){
                         value={formData.comments}
                     ></textarea>
                 </label>
-                {placeCities.includes(inputPlace) ? <button type="submit" className="submit-btn">Submit</button> : null }
+                {placeCities.includes(inputPlace) ? <div className="btn-container"><button type="submit" className="submit-btn">Submit</button></div> : null }
             </form>
         </div>
     )

@@ -82,9 +82,11 @@ function MyTrips(){
                 {filteredTrip}
             </div>
             </div>
-            <div className='trip-form'>
-                <h1 className="trip-header">Add a Trip!</h1>
-                <TripForm user={user} addNewTrip={addNewTrip}/>
+            <div className="big-form-container">
+                <div className='form-container'>
+                    <h1 className="trip-header">Add a Trip!</h1>
+                    <TripForm user={user} addNewTrip={addNewTrip}/>
+                </div>
             </div>
         </div>
     )
