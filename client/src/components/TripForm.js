@@ -13,7 +13,7 @@ function TripForm({user, place=null, addNewTrip}){
     }, [])
 
     const handleTab = (e) => {
-        const matchingPlace = placeCities.find((place) => (place.toLowerCase().startsWith(inputPlace.toLocaleLowerCase()) || place.toLocaleLowerCase().includes(inputPlace.toLocaleLowerCase())))
+        const matchingPlace = placeCities.find((place) => (place.toLowerCase().startsWith(inputPlace.toLocaleLowerCase()) ))
 
         if (e.key === 'Tab'){
             e.preventDefault()

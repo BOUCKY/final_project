@@ -16,7 +16,7 @@ useEffect(() => {
     document.title="Traveler's Club | Home"
 }, [])
 
-const filteredPlaces = places.filter(place => place.city && place.city.toLowerCase().includes(search.toLowerCase()))
+const filteredPlaces = places.filter(place => place.city && place.city.toLowerCase().startsWith(search.toLowerCase()))
 .map(filteredPlaces => (
     <PlaceCard
         key={filteredPlaces.id}

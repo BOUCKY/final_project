@@ -49,7 +49,7 @@ function MyTrips(){
 
     const [search, setSearch] = useState('')
 
-    const filteredTrip = trips.filter(trip => trip.user_id === user?.id).filter(trip => trip.place && trip.place.city.toLowerCase().includes(search.toLowerCase())).map(filteredTrip => (
+    const filteredTrip = trips.filter(trip => trip.user_id === user?.id).filter(trip => trip.place && trip.place.city.toLowerCase().startsWith(search.toLowerCase())).map(filteredTrip => (
         <TripCard
             key={filteredTrip.id}
             id={filteredTrip.id}
