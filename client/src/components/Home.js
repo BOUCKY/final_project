@@ -29,15 +29,17 @@ const filteredPlaces = places.filter(place => place.city && place.city.toLowerCa
 
     return(
         <div className="place-list">
-            <h1 className="place-list-header">Destinations</h1>
-            <div className="search-container">
-                <input
-                    className="search-input"
-                    icon="search"
-                    placeholder="Search destinations . . ."
-                    value={search}
-                    onChange={e => setSearch(e.target.value)}
-                />
+            <div className="place-list-header">
+                <h1>Destinations</h1>
+                <div className="search-container">
+                    <input
+                        className="search-input"
+                        icon="search"
+                        placeholder="Search destinations . . ."
+                        value={search}
+                        onChange={e => setSearch(e.target.value)}
+                    />
+                </div>
             </div>
             <div className="card">
                 {filteredPlaces}

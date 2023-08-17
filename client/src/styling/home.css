@@ -4,23 +4,63 @@
 }
 
 .place-list{
-    padding-top: 175px;
+    padding-top: 200px;
     padding-bottom: 250px;
     margin: 0 45px 0 45px;
 }
 
+.place-list-header{
+    margin: 20px;
+    color: #7e4c42;
+}
+
+/* SEARCH BAR */
+.search-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.search-input {
+    outline: none;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    font-size:15px;
+    text-align: left;
+    padding-left: 10px;
+    border: none;
+    border-left: 1px solid #7e4c42;
+    border-bottom: 1px solid #7e4c42;
+    border-radius: 2px;
+    background-color: white;
+    color: #7e4c42;
+}
+.search-input:hover{
+    box-shadow: -5px 5px 10px 0px rgba(126, 76, 66, 0.5);
+}
+
+
+/* DESTINATION CARDS */
 .place-card{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    padding: 10px;
     margin: 20px;
-    border: 5px solid black;
+    border-left: 1px solid #7e4c42;
+    border-bottom: 1px solid #7e4c42;
+    border-radius: 2px;
+    background-color: white;
+}
+.place-card:hover{
+    box-shadow: -5px 5px 10px 5px rgba(126, 76, 66, 0.5);
 }
 .place-pic{
     width: 100%;
 }
 .place-card-info{
     text-align: center;
+    /* color: #d49e83; */
+    color: #b35c4b;
 }

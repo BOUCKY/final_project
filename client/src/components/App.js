@@ -6,7 +6,7 @@ import Home from "./Home"
 import MyTrips from './MyTrips'
 import Social from './Social'
 import Auth from './Auth'
-import PackingList from './PackingList'
+import Travel101 from './Travel101'
 import '../styling/app.css'
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Auth navigate={navigate}/>}></Route>
         <Route path='home' element={<Home />} />
-        <Route path='list' element={<PackingList />} />
+        <Route path='list' element={<Travel101 />} />
         <Route path='trips' element={<MyTrips />} />
         <Route path='social' element={<Social />} />
         {/* social needs user */}
