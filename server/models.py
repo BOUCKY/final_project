@@ -89,5 +89,11 @@ class Trip(db.Model, SerializerMixin):
             raise ValueError('The rating must be a number between 1 and 5.')
         return rating
     
+    @validates('comments')
+    def validate_comments(self, key, comments):
+        if len(comments) > 200:
+            raise ValueError('Please keep comments under 200 characters.')
+        return comments
+    
     def __repr__(self):
         return f'<trip: {self.user_id}, {self.place_id}, {self.rating}, {self.comments}'
