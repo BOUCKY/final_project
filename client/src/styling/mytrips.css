@@ -134,4 +134,7 @@ textarea{
     cursor: not-allowed;
     margin-top: 25px;
     opacity: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
