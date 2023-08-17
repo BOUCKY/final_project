@@ -35,7 +35,7 @@ const filteredPlaces = places.filter(place => place.city && place.city.toLowerCa
                     <input
                         className="search-input"
                         icon="search"
-                        placeholder="Search destinations . . ."
+                        placeholder="Search Destinations . . ."
                         value={search}
                         onChange={e => setSearch(e.target.value)}
                     />

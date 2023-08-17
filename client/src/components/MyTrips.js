@@ -47,9 +47,25 @@ function MyTrips(){
         )
     }
 
-    const [search, setSearch] = useState('')
+    // const [search, setSearch] = useState('')
 
-    const filteredTrip = trips.filter(trip => trip.user_id === user?.id).filter(trip => trip.place && trip.place.city.toLowerCase().startsWith(search.toLowerCase())).map(filteredTrip => (
+    // const filteredTrip = trips.filter(trip => trip.user_id === user?.id).filter(trip => trip.place && trip.place.city.toLowerCase().startsWith(search.toLowerCase())).map(filteredTrip => (
+        // <TripCard
+        //     key={filteredTrip.id}
+        //     id={filteredTrip.id}
+        //     placeCity={filteredTrip.place.city}
+        //     placeState={filteredTrip.place.state}
+        //     placeCountry={filteredTrip.place.country}
+        //     placeImage={filteredTrip.place.image}
+        //     rating={filteredTrip.rating}
+        //     comments={filteredTrip.comments}
+        //     favorite={filteredTrip.favorite}
+        //     handleFavorite={handleFavorite}
+        //     removeTripCard={removeTripCard}
+        // />
+    // ))
+
+    const eachTrip = trips.filter((trip) => trip.user_id === user?.id).map(filteredTrip => (
         <TripCard
             key={filteredTrip.id}
             id={filteredTrip.id}
@@ -69,7 +85,7 @@ function MyTrips(){
         <div className='trip-page'>
             <div className='trip-list'>
             <h1 className="trip-header">My Trips</h1>
-            <div className="search-container">
+            {/* <div className="search-container">
                 <input
                     className="search-input"
                     icon="search"
@@ -77,9 +93,10 @@ function MyTrips(){
                     value={search}
                     onChange={e => setSearch(e.target.value)}
                 />
-            </div>
+            </div> */}
             <div className="card">
-                {filteredTrip}
+                {eachTrip}
+                {/* {filteredTrip} */}
             </div>
             </div>
             <div className="big-form-container">

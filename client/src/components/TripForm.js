@@ -71,7 +71,7 @@ function TripForm({user, place=null, addNewTrip}){
                         value={formData.comments}
                     ></textarea>
                 </label>
-                {placeCities.includes(inputPlace) ? <div className="btn-container"><button type="submit" className="submit-btn">Submit</button></div> : null }
+                {placeCities.includes(inputPlace) ? <div className="btn-container"><button type="submit" className="submit-btn">Submit</button></div> : <div className="btn-container"><button type="submit" className="shy-submit-btn">Submit</button></div> }
             </form>
         </div>
     )
