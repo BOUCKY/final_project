@@ -23,6 +23,7 @@
 }
 
 .list-header{
+    font-size: 35px;
     text-align: center;
     padding: 35px 0;
 }
@@ -38,7 +39,7 @@
 }
 .packing-list li{
     padding: 10px 20px;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .tips-list{
@@ -50,5 +51,5 @@
 }
 .tips-list li{
     padding: 20px 20px;
-    font-size: 15px;
+    font-size: 18px;
 }

@@ -84,7 +84,7 @@ function MyTrips(){
     return (
         <div className='trip-page'>
             <div className='trip-list'>
-            <h1 className="trip-header">My Trips</h1>
+            <p className="trip-header">My Trips</p>
             {/* <div className="search-container">
                 <input
                     className="search-input"
@@ -101,7 +101,7 @@ function MyTrips(){
             </div>
             <div className="big-form-container">
                 <div className='form-container'>
-                    <h1 className="trip-header">Add a Trip!</h1>
+                    <p className="trip-header">Add a Trip!</p>
                     <TripForm user={user} addNewTrip={addNewTrip}/>
                 </div>
             </div>

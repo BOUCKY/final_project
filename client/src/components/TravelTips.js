@@ -1,7 +1,7 @@
 function TravelTips(){
     return(
         <div className='list-container'>
-            <h1 className="list-header">The Ultimate Travel Tips</h1>
+            <p className="list-header">The Ultimate Travel Tips</p>
             <div className='tips-list'>
                 <li>Put black duct tape on any expensive electronics like camera equipment. If it looks broken, nobody wants to steal it.</li>
                 <li>Ear plugs. If you're traveling on a budget, you will probably be staying in some noisy located places. They really help.</li>

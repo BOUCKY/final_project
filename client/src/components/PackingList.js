@@ -2,7 +2,7 @@
 function PackingList(){
     return(
         <div className='list-container'>
-            <h1 className="list-header">The Ultimate Packing List Guide</h1>
+            <p className="list-header">The Ultimate Packing List Guide</p>
             <div className='packing-list'>
 
                 <li>Passport</li>

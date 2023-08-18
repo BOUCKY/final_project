@@ -31,7 +31,7 @@ const filteredPlaces = places.filter(place => place.city && place.city.toLowerCa
     return(
         <div className="place-list">
             <div className="place-list-header">
-                <h1>Destinations</h1>
+                <p>Destinations</p>
                 <div className="search-container">
                     <input
                         className="search-input"
