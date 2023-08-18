@@ -39,9 +39,15 @@
     text-align: center;
     height: 600px;
 }
+.trip-location{
+    font-weight: bold;
+}
 .heart{
     font-size: 18px;
     cursor: pointer;
+}
+.trip-card-title{
+    padding-top: 20px;
 }
 .trip-rating{
     margin-bottom: 0;

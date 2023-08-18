@@ -6,7 +6,7 @@ function UserCard({id, username, image, trips}){
         <div className="user-card">
             <div className="user-content">
                 <div className="user-card-info">
-                    <Link to={`/user/${id}/trips`}>
+                    <Link className='user-link' to={`/user/${id}/trips`}>
                         <p className="card-username">{username}</p>
                         <img className="user-card-image" src={image} alt={username}/>
                     </Link>

@@ -3,18 +3,20 @@ import { useParams } from 'react-router-dom';
 import UserTripCard from './UserTripCard';
 
 function UserTrips() {
-  const {userId} = useParams();
-  const [userTrips, setUserTrips] = useState([]);
+  const {userId} = useParams()
+  const [userTrips, setUserTrips] = useState([])
+  const [username, setUsername] = useState('')
 
   useEffect(() => {
     fetch(`/users/${userId}/trips`)
       .then((response) => response.json())
       .then((data) => {
         // Assuming the API response is an object with a 'trips' property
-        const trips = data.trips || []; // Initialize with an empty array if 'trips' is missing
-        setUserTrips(trips);
-      });
-  }, [userId]);
+        const trips = data.trips || [] // Initialize with an empty array if 'trips' is missing
+        setUserTrips(trips)
+        setUsername(data.username)
+      })
+  }, [userId])
 
   const userTripCards = userTrips.map((trip) => (
     <UserTripCard
@@ -32,7 +34,7 @@ function UserTrips() {
   return (
     <div className='trip-page'>
         <div className='trip-list'>
-            <p className="trip-header">User's Trips</p>
+            <p className="trip-header">{username}'s Trips</p>
             <div className="card">
                 {userTripCards}
             </div>

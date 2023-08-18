@@ -39,6 +39,10 @@
     justify-content: space-between;
     padding: 20px;
 }
+.user-link{
+    color: #7e4c42;
+    text-decoration: none;
+}
 .card-username{
     font-size: 25px;
 }
