@@ -34,18 +34,21 @@
     padding-left: 10%;
     padding-bottom: 50px;
     padding-top: 40px;
+    list-style: none;
 }
+.packing-list li{
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
 .tips-list{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     width: 80%;
-    padding-left: 10%;
     padding-bottom: 50px;
     padding-top: 40px;
 }
-
-li{
-    padding: 10px 20px;
-    list-style: none;
+.tips-list li{
+    padding: 20px 20px;
     font-size: 15px;
 }
