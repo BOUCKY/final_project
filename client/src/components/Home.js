@@ -1,4 +1,4 @@
-import { React, useState, useEffect }from "react"
+import React, {useState, useEffect}from "react"
 import PlaceCard from "./PlaceCard"
 import '../styling/home.css'
 
