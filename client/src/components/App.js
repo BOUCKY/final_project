@@ -9,6 +9,7 @@ import UserTrips from "./UserTrips";
 import Auth from './Auth'
 import Travel101 from './Travel101'
 import '../styling/app.css'
+import WishCard from "./WishCard";
 
 function App() {
   const {user, setUser} = useContext(UserContext)
@@ -35,6 +36,7 @@ function App() {
         <Route path='home' element={<Home />} />
         <Route path='list' element={<Travel101 />} />
         <Route path='trips' element={<MyTrips />} />
+        <Route path='wish-list' element={<WishCard />} />
         <Route path='/user/:userId/trips' element={<UserTrips />} />
         <Route path='social' element={<Social />} />
       </Routes>

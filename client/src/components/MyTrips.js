@@ -1,14 +1,19 @@
 import TripCard from "./TripCard"
 import TripForm from "./TripForm"
+import WishList from "./WishList"
 import React, { useState, useEffect, useContext } from "react"
 import '../styling/mytrips.css'
 import { UserContext } from "../context/user"
 
 function MyTrips(){
 
-    const {user} = useContext(UserContext)
+    useEffect(() => {
+        document.title="Traveler's Club | My Trips"
+    }, [])
 
+    const {user} = useContext(UserContext)
     const [trips, setTrips] = useState([])
+    const [myTrips, setMyTrips] = useState(True)
 
     useEffect(() => {
         fetch('/trips')
@@ -37,33 +42,11 @@ function MyTrips(){
             })))
     }
 
-    useEffect(() => {
-        document.title="Traveler's Club | My Trips"
-    }, [])
-
     const removeTripCard = (id) => {
         setTrips((currentTrips) => 
             currentTrips.filter((trip) => trip.id !== id)
         )
     }
-
-    // const [search, setSearch] = useState('')
-
-    // const filteredTrip = trips.filter(trip => trip.user_id === user?.id).filter(trip => trip.place && trip.place.city.toLowerCase().startsWith(search.toLowerCase())).map(filteredTrip => (
-        // <TripCard
-        //     key={filteredTrip.id}
-        //     id={filteredTrip.id}
-        //     placeCity={filteredTrip.place.city}
-        //     placeState={filteredTrip.place.state}
-        //     placeCountry={filteredTrip.place.country}
-        //     placeImage={filteredTrip.place.image}
-        //     rating={filteredTrip.rating}
-        //     comments={filteredTrip.comments}
-        //     favorite={filteredTrip.favorite}
-        //     handleFavorite={handleFavorite}
-        //     removeTripCard={removeTripCard}
-        // />
-    // ))
 
     const eachTrip = trips.filter((trip) => trip.user_id === user?.id).map(filteredTrip => (
         <TripCard
@@ -84,19 +67,13 @@ function MyTrips(){
     return (
         <div className='trip-page'>
             <div className='trip-list'>
-            <p className="trip-header">My Trips</p>
-            {/* <div className="search-container">
-                <input
-                    className="search-input"
-                    icon="search"
-                    placeholder="Search your trips . . ."
-                    value={search}
-                    onChange={e => setSearch(e.target.value)}
-                />
-            </div> */}
+                <div className="trip-header-container">
+                    <button className="tributton-header" onClick={setMyTrips(true)}>My Trips</button>
+                    <button className="trip-header" onClick={setMyTrips(false)}>Wish List</button>
+                </div>
             <div className="card">
-                {eachTrip}
-                {/* {filteredTrip} */}
+                {myTrips ? {eachTrip} : {wishTrip}}
+                {/* {eachTrip} */}
             </div>
             </div>
             <div className="big-form-container">
