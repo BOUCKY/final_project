@@ -1,0 +1,74 @@
+.authentication{
+    color: antiquewhite;
+    text-align: center;
+}
+
+.welcome{
+    margin: 0;
+    font-size: 60px;
+    padding-top: 175px;
+}
+.continue{
+    font-size: 25px;
+}
+.longin-signup-btn{
+    padding: 20px;
+    color: antiquewhite;
+    font-size: 18px;
+    cursor: pointer;
+}
+.longin-signup-btn:hover{
+    opacity: 0.6;
+}
+
+/* FORMS */
+.form-div{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+.login-signup-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+.form-titles{
+    padding-bottom: 5px;
+}
+.form-div input{
+    width: 250px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    background-color: antiquewhite;
+    color: #7e4c42;
+}
+.login-btn-container{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.login-signup-submit-btn{
+    height: 40px;
+    width: 65px;
+    cursor: pointer;
+    background-color: antiquewhite;
+    color: #7e4c42;
+    font-size: 15px;
+    margin-top: 20px;
+    opacity: 0.75;
+}
+.login-signup-submit-btn:hover{
+    opacity: 1;
+}
+.choose-pic::file-selector-button{
+    margin-right: 30px;
+    padding-right: 40px;
+    border: none;
+    outline: none;
+    border-right: 2px solid #7e4c42;
+    background-color: antiquewhite;
+    color: #7e4c42;
+    cursor: pointer;
+    font-weight: bold;
+}

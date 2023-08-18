@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react"
 import { UserContext } from "../context/user"
-// import '../styling/Auth.css'
+import '../styling/auth.css'
 
 function Auth({navigate }){
 
@@ -8,7 +8,9 @@ function Auth({navigate }){
 
     useEffect(() => {
         document.title="Traveler's Club"
+        document.body.style.backgroundColor="#7e4c42"
     }, [])
+
 
     const [ isLogin, setIsLogin ] = useState(0) // if 1 we'll fetch to .../login, if 2, we'll fetch to .../signup
     const [ formData, setFormData ] = useState({username:"",password:"", profile_image: null}) // holds login form data
@@ -65,8 +67,8 @@ function Auth({navigate }){
             <p className="continue">To continue, please Login or Signup.</p>
             {isLogin === 0 ? 
             <div className="login-or-signup">
-                <button onClick={(e)=>{setIsLogin(1)}}>Login</button>
-                <button onClick={(e)=>{setIsLogin(2)}}>Signup</button>
+                <button className="longin-signup-btn" onClick={(e)=>{setIsLogin(1)}}>Login</button>
+                <button className="longin-signup-btn" onClick={(e)=>{setIsLogin(2)}}>Signup</button>
             </div>
             :
             <div className="form-div">
@@ -97,7 +99,7 @@ function Auth({navigate }){
                                     name="image"
                                     onChange={(e) => {setFormData({...formData, image: e.target.files[0]})}}/>
                         </div> : null}
-                    <button className="submit-btn" type="submit">{isLogin === 1 ? "Login" : "Signup"}</button>
+                    <div className="login-btn-container"><button className="login-signup-submit-btn" type="submit">{isLogin === 1 ? "Login" : "Signup"}</button></div>
                 </form>
             </div>
             }

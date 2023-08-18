@@ -14,6 +14,7 @@ useEffect(() => {
 
 useEffect(() => {
     document.title="Traveler's Club | Home"
+    document.body.style.backgroundColor="white"
 }, [])
 
 const filteredPlaces = places.filter(place => place.city && place.city.toLowerCase().startsWith(search.toLowerCase()))
