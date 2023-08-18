@@ -4,9 +4,9 @@ import React, { useState, useEffect, useContext } from "react"
 import '../styling/mytrips.css'
 import { UserContext } from "../context/user"
 
-function MyTrips(){
+function MyTrips({user}){
 
-    const {user} = useContext(UserContext)
+    // const {user} = useContext(UserContext)
 
     const [trips, setTrips] = useState([])
 

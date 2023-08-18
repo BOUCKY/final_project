@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext} from "react"
 import { UserContext } from "../context/user"
 import UserCard from "./UserCard"
+import '../styling/social.css'
 
 function Social(){
 
@@ -8,18 +9,19 @@ function Social(){
         document.title = "Traveler's Club | Social"
     }, [])
 
-    const {user, setUser} = useContext(UserContext)
+    const {user} = useContext(UserContext)
+    const [allUsers, setAllUsers] = useState([])
 
     useEffect(() => {
         fetch('/users')
         .then(r => r.json())
-        .then(data => setUser(data))
+        .then(data => setAllUsers(data))
     }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
     const [search, setSearch] = useState('')
 
     const filteredUsers = user && user.id // Check if user is not null and has an 'id' property
-    ? user
+    ? allUsers
         .filter(eachUser => eachUser.id !== user.id)
         .filter(filteredUser => filteredUser.username.toLowerCase().startsWith(search.toLowerCase()))
         .map(filteredUser => (
@@ -35,12 +37,12 @@ function Social(){
     return(
         <div className="user-card-list">
             <div className="user-list-header">
-                <h1>Friends</h1>
+                <p>Friends</p>
                 <div className="search-container">
                     <input
                         className="search-input"
                         icon="search"
-                        placeholder="Search destinations . . ."
+                        placeholder="Search Friends . . ."
                         value={search}
                         onChange={e => setSearch(e.target.value)}
                     />

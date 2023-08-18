@@ -33,9 +33,8 @@ function App() {
         <Route path='/' element={<Auth navigate={navigate}/>}></Route>
         <Route path='home' element={<Home />} />
         <Route path='list' element={<Travel101 />} />
-        <Route path='trips' element={<MyTrips />} />
+        <Route path='trips' element={<MyTrips user={user}/>} />
         <Route path='social' element={<Social />} />
-        {/* social needs user */}
       </Routes>
     </div>
   );
