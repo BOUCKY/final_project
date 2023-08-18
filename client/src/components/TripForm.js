@@ -31,6 +31,8 @@ function TripForm({user, place=null, addNewTrip}){
         })
             .then(r => r.json())
             .then(newTrip => addNewTrip(newTrip))
+                setFormData({ rating: 0, comments: '' });
+                setInputPlace('')
     }
 
     if(!!place){

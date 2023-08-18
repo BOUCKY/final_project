@@ -48,6 +48,7 @@
     flex-wrap: wrap;
     align-items: center;
     margin: 20px;
+    padding-bottom: 10px;
     border-left: 1px solid #7e4c42;
     border-bottom: 1px solid #7e4c42;
     border-radius: 2px;
