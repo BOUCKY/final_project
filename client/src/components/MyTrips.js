@@ -1,6 +1,6 @@
 import TripCard from "./TripCard"
 import TripForm from "./TripForm"
-import WishList from "./WishList"
+// import WishList from "./WishList"
 import React, { useState, useEffect, useContext } from "react"
 import '../styling/mytrips.css'
 import { UserContext } from "../context/user"
@@ -13,7 +13,7 @@ function MyTrips(){
 
     const {user} = useContext(UserContext)
     const [trips, setTrips] = useState([])
-    const [myTrips, setMyTrips] = useState(True)
+    // const [myTrips, setMyTrips] = useState(true)
 
     useEffect(() => {
         fetch('/trips')
@@ -68,12 +68,13 @@ function MyTrips(){
         <div className='trip-page'>
             <div className='trip-list'>
                 <div className="trip-header-container">
-                    <button className="tributton-header" onClick={setMyTrips(true)}>My Trips</button>
-                    <button className="trip-header" onClick={setMyTrips(false)}>Wish List</button>
+                    <p className="trip-header">My Trips</p>
+                    {/* <button className="tributton-header" onClick={setMyTrips(true)}>My Trips</button>
+                    <button className="trip-header" onClick={setMyTrips(false)}>Wish List</button> */}
                 </div>
             <div className="card">
-                {myTrips ? {eachTrip} : {wishTrip}}
-                {/* {eachTrip} */}
+                {/* {myTrips ? {eachTrip} : {wishTrip}} */}
+                {eachTrip}
             </div>
             </div>
             <div className="big-form-container">
