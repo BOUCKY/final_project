@@ -4,9 +4,9 @@ import React, { useState, useEffect, useContext } from "react"
 import '../styling/mytrips.css'
 import { UserContext } from "../context/user"
 
-function MyTrips({user}){
+function MyTrips(){
 
-    // const {user} = useContext(UserContext)
+    const {user} = useContext(UserContext)
 
     const [trips, setTrips] = useState([])
 
@@ -38,7 +38,7 @@ function MyTrips({user}){
     }
 
     useEffect(() => {
-        document.title="Traveler's Club"
+        document.title="Traveler's Club | My Trips"
     }, [])
 
     const removeTripCard = (id) => {

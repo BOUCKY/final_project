@@ -27,6 +27,7 @@ function Social(){
         .map(filteredUser => (
             <UserCard 
                 key={filteredUser.id}
+                id={filteredUser.id}
                 username={filteredUser.username}
                 image={filteredUser.profile_image}
                 trips={filteredUser.trips}
@@ -48,7 +49,7 @@ function Social(){
                     />
                 </div>
             </div>
-            <div className="card">
+            <div className="social-card">
                 {filteredUsers}
             </div>
         </div>

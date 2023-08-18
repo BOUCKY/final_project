@@ -43,6 +43,20 @@ def Users():
         except ValueError as v_error:
             return make_response({'errors':[v_error]},400)
         
+@app.route('/users/<int:id>/trips', methods=['GET'])
+def user_id(id):
+    user = User.query.filter(User.id == id).first()
+
+    if request.method == 'GET':
+        if user == None:
+            return make_response({'error': 'User not found.'}, 404)
+    
+        user_data = user.to_dict()
+        user_trips = [trip.to_dict() for trip in user.trips]
+        
+        user_data['trips'] = user_trips
+    
+        return make_response(user_data, 200)
 
 @app.route('/places', methods=['GET'])
 def places():
