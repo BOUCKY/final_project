@@ -1,6 +1,6 @@
 import '../styling/home.css'
 
-function PlaceCard({city, state, country, image}){
+function PlaceCard({city, state, country, image, addToWishList}){
 
     return (
         <div className="place-card">
@@ -11,6 +11,7 @@ function PlaceCard({city, state, country, image}){
                 <div className="place-card-info">
                     {state ? <p className="place-location">{city}, {state}</p> : <p className="place-location">{city}</p>}
                     <p className="place-location">{country}</p>
+                    <button className="add-to-wish-list" onClick={addToWishList}>Add to Wish List</button>
                 </div>
             </div>
         </div>

@@ -95,8 +95,8 @@ function MyTrips(){
         <div className='trip-page'>
             <div className='trip-list'>
                 <div className="trip-header-container">
-                    <button className={`trip-header ${myTrips ? "underline" : ""}`} onClick={() => setMyTrips(true)}>My Trips</button>
-                    <button className={`wish-header ${!myTrips ? "underline" : ""}`} onClick={() => setMyTrips(false)}>Wish List</button>
+                    <p className={`trip-header ${myTrips ? "underline" : ""}`} onClick={() => setMyTrips(true)}>My Trips</p>
+                    <p className={`wish-header ${!myTrips ? "underline" : ""}`} onClick={() => setMyTrips(false)}>Wish List</p>
                 </div>
             <div className="card">
                 {myTrips ? eachTrip : wishTrip}

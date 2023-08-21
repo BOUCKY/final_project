@@ -1,32 +1,62 @@
-import React, {useState, useEffect}from "react"
+import React, {useState, useEffect, useContext}from "react"
+import { UserContext } from "../context/user"
 import PlaceCard from "./PlaceCard"
 import '../styling/home.css'
 
 function Home(){
+
+    useEffect(() => {
+        document.title="Traveler's Club | Home"
+        document.body.style.backgroundColor="white"
+    }, [])
+
+    const {user} = useContext(UserContext)
+
     const [places, setPlaces] = useState([])
-    const [search, setSearch] = useState(''); // State for search query
+    const [wishes, setWishes] = useState([])
+    const [search, setSearch] = useState('')
 
-useEffect(() => {
-    fetch('http://127.0.0.1:5555/places')
-    .then(r => r.json())
-    .then(data => setPlaces(data))
-},[])
 
-useEffect(() => {
-    document.title="Traveler's Club | Home"
-    document.body.style.backgroundColor="white"
-}, [])
+    const addToWishList = (destination, userId) => {
+        const newWish = {
+            user_id: userId,
+            place_id: destination.id,
+        }
 
-const filteredPlaces = places.filter(place => place.city && place.city.toLowerCase().startsWith(search.toLowerCase()))
-.map(filteredPlaces => (
-    <PlaceCard
-        key={filteredPlaces.id}
-        city={filteredPlaces.city}
-        state={filteredPlaces.state}
-        country={filteredPlaces.country}
-        image={filteredPlaces.image}
-    />
-));
+        fetch('/wishes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newWish),
+        })
+        .then(response => response.json())
+        .then(data => {
+            setWishes(prevWishes => [...prevWishes, data])
+            console.log('Added to wish list:', newWish)
+        })
+        .catch(error => {
+            console.error('Error adding to wish list:', error)
+        })
+    }
+
+    useEffect(() => {
+        fetch('/places')
+        .then(r => r.json())
+        .then(data => setPlaces(data))
+    },[])
+
+    const filteredPlaces = places.filter(place => place.city && place.city.toLowerCase().startsWith(search.toLowerCase()))
+    .map(filteredPlaces => (
+        <PlaceCard
+            key={filteredPlaces.id}
+            city={filteredPlaces.city}
+            state={filteredPlaces.state}
+            country={filteredPlaces.country}
+            image={filteredPlaces.image}
+            addToWishList={() => addToWishList(filteredPlaces, user.id)}
+        />
+    ));
 
     return(
         <div className="place-list">
@@ -44,14 +74,9 @@ const filteredPlaces = places.filter(place => place.city && place.city.toLowerCa
             </div>
             <div className="card">
                 {filteredPlaces}
-                {/* {console.log(filteredPlaces)} */}
             </div>
         </div>
     )
 }
 
 export default Home
-
-// display: grid;
-//   /* puts in grid notation. Starts a new row after every 5. 1fr = spacing*/
-//   grid-template-columns: repeat(6, 1fr);

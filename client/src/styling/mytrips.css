@@ -30,6 +30,7 @@
 }
 .underline{
     border-bottom: 2px solid #7e4c42;
+    box-shadow: 0px 15px 12px -10px rgba(126, 76, 66, 0.5);
 }
 
 
@@ -166,7 +167,7 @@ textarea{
 
 /* MY WISH CARDS */
 .wish-card{
-    height: 550px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -197,6 +198,6 @@ textarea{
 .wish-delete-button{
     font-size: 20px;
     position: absolute; 
-    top: 500px;
+    top: 450px;
     cursor: pointer;
 }
