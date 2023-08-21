@@ -16,10 +16,10 @@ function TravelTips(){
                 <li>Buy a diaper bag to pack photography equipment. They're cheap, waterproof, and nobody steals a diaper bag.</li>
                 <li>Never delete from your phone or throw away your boarding pass before you've actually entered your destination.</li>
                 <li>Scams are easily avoidable if you don't put yourself in vulnerable positions.</li>
-                <li>Instead of buying expensive international roaming and data from your cell provider, just buy a cheap prepaid rechargeable SIM card in whatever country you need service.</li>
                 <li>Street food can be amazing, but do your research about where it's safe to eat first.</li>
                 <li>Don't exchange money. Rather, use an ATM for the best exchange rate.</li>
                 <li>To avoid tangling, thread a straw with your delicate necklaces.</li>
+                <li>Instead of buying expensive international roaming and data from your cell provider, just buy a cheap prepaid rechargeable SIM card in whatever country you need service.</li>
                 <li>You only need to pack one power adapter and a powerboard. It's much cheaper than buying multiple adapters, and you end up with more sockets for all your electronics.</li>
                 <li>Keep copies of important travel documents on your phone and in the cloud so you can always access them.</li>
                 <li>Being flexible and ready to adapt is one of the most important parts of travelling.</li>
@@ -27,16 +27,16 @@ function TravelTips(){
                 <li>For the ladies: Research how the locals dress. If you look like you fit in and pay attention to your surroundings, no one will bother you.</li>
                 <li>Familiarize yourself with your destination ahead of time.</li>
                 <li>If you travel frequently, travel insurance is something you're going to want to get.</li>
-                <li>If your plans change and you need to cancel your hotel reservation against the hotel's cancellation policy, don't call and cancel. Instead, call the hotel and move your reservation to the following week — because many hotels will allow you to change a reservation without issue.</li>
-                <li>Keep a spreadsheet or list to stay organized.</li>
-                <li>Do the research and plan your meal times according to local customs. Many European restaurants close at 2 p.m. for a break and begin serving dinner later than when you might be used to in the States.</li>
-                <li>Rolled clothing takes up less space than folded clothing.</li>
-                <li>Download Maps.me. This app lets you download a map of the country you're visiting for free while you're using Wi-Fi, and later it can function as GPS and even recalculate without cell signal.</li>
-                <li>Pack your dirty shoes in a shower cap.</li>
-                <li>Thanksgiving can be a great time to travel internationally. Since it's an American holiday and people are traveling between states, ticket prices abroad go way down.</li>
-                <li>If you're traveling throughout Europe, buy an Interrail Pass. It's basically a continent-wide train ticket.</li>
-                <li>If you plan on sightseeing, try to walk from place to place. You'll learn much more about a city and the people by walking.</li>
                 <li>Hotel lobbies have great bathrooms. Find a luxury hotel and go to the bar, order an iced tea or a Coke, and then you can use a nice bathroom. Plus, most also have free Wi-Fi these days as well.</li>
+                <li>Download Maps.me. This app lets you download a map of the country you're visiting for free while you're using Wi-Fi, and later it can function as GPS and even recalculate without cell signal.</li>
+                <li>Do the research and plan your meal times according to local customs. Many European restaurants close at 2 p.m. for a break and begin serving dinner later than when you might be used to in the States.</li>
+                <li>If your plans change and you need to cancel your hotel reservation against the hotel's cancellation policy, don't call and cancel. Instead, call the hotel and move your reservation to the following week — because many hotels will allow you to change a reservation without issue.</li>
+                <li>Thanksgiving can be a great time to travel internationally. Since it's an American holiday and people are traveling between states, ticket prices abroad go way down.</li>
+                <li>If you plan on sightseeing, try to walk from place to place. You'll learn much more about a city and the people by walking.</li>
+                <li>Rolled clothing takes up less space than folded clothing.</li>
+                <li>Keep a spreadsheet or list to stay organized.</li>
+                <li>Pack your dirty shoes in a shower cap.</li>
+                <li>If you're traveling throughout Europe, buy an Interrail Pass. It's basically a continent-wide train ticket.</li>
                 <li>When it comes to booking accommodations, always read the reviews!</li>
                 <li>Always have cash on you.</li>
             </div>
