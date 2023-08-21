@@ -82,11 +82,14 @@ function MyTrips(){
         <WishCard
             key={filteredWish.id}
             id={filteredWish.id}
+            place={filteredWish.place}
+            place_id={filteredWish.place.id}
             placeCity={filteredWish.place.city}
             placeState={filteredWish.place.state}
             placeCountry={filteredWish.place.country}
             placeImage={filteredWish.place.image}
             removeWishCard={removeWishCard}
+            addNewTrip={addNewTrip}
         />
     ))
         

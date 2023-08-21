@@ -196,8 +196,23 @@ textarea{
     padding-top: 20px;
 }
 .wish-delete-button{
-    font-size: 20px;
-    position: absolute; 
-    top: 450px;
+    font-size: 15px;
+    color: #7e4c42;
+    top: 350px;
     cursor: pointer;
+    border: 1px solid #7e4c42;
+    border-radius: 2px;
+    color: #7e4c42;
+    height: 50px;
+    width: 100px;
+    margin-top: 25px;
+    opacity: .6;
+}
+.wish-delete-button:hover{
+    opacity: 1;
+}
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }

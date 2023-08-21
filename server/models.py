@@ -108,7 +108,7 @@ class Wish(db.Model, SerializerMixin):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     place_id = db.Column(db.Integer, db.ForeignKey('places.id'), nullable=False)
 
-    serialize_rules = ('-place.wishes', '-user.wishes', '-user.trips')
+    serialize_rules = ('-place.wishes', '-place.trips', '-user.wishes', '-user.trips')
 
     def __repr__(self):
         return f'<trip: {self.user_id}, {self.place_id}'
