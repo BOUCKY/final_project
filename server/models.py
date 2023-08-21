@@ -30,6 +30,8 @@ class User(db.Model, SerializerMixin):
 
     #relationships
     trips = db.relationship('Trip', backref='user')
+    wishes = db.relationship('Wish', backref='user')
+
     places = association_proxy('trips','place')
 
     #serialize rules
@@ -57,6 +59,7 @@ class Place(db.Model, SerializerMixin):
     
     # add relationship
     trips = db.relationship('Trip', backref='place')
+    wishes = db.relationship('Wish', backref='place')
 
     # add serialization rules
     users = association_proxy('trips', 'users')
@@ -97,3 +100,15 @@ class Trip(db.Model, SerializerMixin):
     
     def __repr__(self):
         return f'<trip: {self.user_id}, {self.place_id}, {self.rating}, {self.comments}'
+    
+class Wish(db.Model, SerializerMixin):
+    __tablename__ = 'wishes'
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    place_id = db.Column(db.Integer, db.ForeignKey('places.id'), nullable=False)
+
+    serialize_rules = ('-place.wishes', '-user.wishes', '-user.trips')
+
+    def __repr__(self):
+        return f'<trip: {self.user_id}, {self.place_id}'

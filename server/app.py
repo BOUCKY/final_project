@@ -7,7 +7,7 @@ from flask import request, make_response, session, send_from_directory
 from flask_restful import Resource
 from werkzeug.utils import secure_filename
 import os
-from models import User, Trip, Place
+from models import User, Trip, Place, Wish
 
 from config import app, api, db, UPLOAD_FOLDER, ALLOWED_EXTENSIONS
 
@@ -110,6 +110,39 @@ def trip_id(id):
         db.session.commit()
         return make_response(trip.to_dict(), 200)
     
+
+@app.route('/wishes', methods=['GET', 'POST'])
+def wishes():
+    if request.method == 'GET':
+        wishes = [w.to_dict() for w in Wish.query.all()]
+        return make_response(wishes, 200)
+    
+    if request.method == 'POST':
+        data = request.get_json()
+        try:
+            new_wish = Wish(
+                user_id = data['user_id'],
+                place_id = data['place_id']
+            )
+            db.session.add(new_wish)
+            db.session.commit()
+            return make_response(new_wish.to_dict(), 201)
+        except Exception as e:
+            return make_response({"errors": [str(e)]}, 400)
+        
+
+@app.route('/wishes/<int:id>', methods=['DELETE',])
+def wish_id(id):
+    wish = Wish.query.filter(Wish.id == id).first()
+    
+    if request.method == 'DELETE':
+        if wish == None:
+            return make_response({'error': 'wish not found'}, 404)
+        
+        db.session.delete(wish)
+        db.session.commit()
+        return make_response({'message':'Successfully deleted the wish.'},204)
+
 
 # user login and auth
 @app.route('/login', methods=["POST"])

@@ -1,6 +1,6 @@
 import TripCard from "./TripCard"
 import TripForm from "./TripForm"
-// import WishList from "./WishList"
+import WishCard from "./WishCard"
 import React, { useState, useEffect, useContext } from "react"
 import '../styling/mytrips.css'
 import { UserContext } from "../context/user"
@@ -13,12 +13,19 @@ function MyTrips(){
 
     const {user} = useContext(UserContext)
     const [trips, setTrips] = useState([])
-    // const [myTrips, setMyTrips] = useState(true)
+    const [wishes, setWishes] = useState([])
+    const [myTrips, setMyTrips] = useState(true)
 
     useEffect(() => {
         fetch('/trips')
             .then(r => r.json())
             .then(data => setTrips(data))
+    }, [])
+
+    useEffect(() => {
+        fetch('/wishes')
+            .then(r => r.json())
+            .then(data => setWishes(data))
     }, [])
 
     const addNewTrip = (newTrip) => {
@@ -48,6 +55,12 @@ function MyTrips(){
         )
     }
 
+    const removeWishCard = (id) => {
+        setWishes((currentWishes) => 
+            currentWishes.filter((wish) => wish.id !== id)
+        )
+    }
+
     const eachTrip = trips.filter((trip) => trip.user_id === user?.id).map(filteredTrip => (
         <TripCard
             key={filteredTrip.id}
@@ -63,26 +76,41 @@ function MyTrips(){
             removeTripCard={removeTripCard}
         />
     ))
+
+    
+    const wishTrip = wishes.filter((wish) => wish.user_id === user?.id).map(filteredWish => (
+        <WishCard
+            key={filteredWish.id}
+            id={filteredWish.id}
+            placeCity={filteredWish.place.city}
+            placeState={filteredWish.place.state}
+            placeCountry={filteredWish.place.country}
+            placeImage={filteredWish.place.image}
+            removeWishCard={removeWishCard}
+        />
+    ))
+        
     
     return (
         <div className='trip-page'>
             <div className='trip-list'>
                 <div className="trip-header-container">
-                    <p className="trip-header">My Trips</p>
-                    {/* <button className="tributton-header" onClick={setMyTrips(true)}>My Trips</button>
-                    <button className="trip-header" onClick={setMyTrips(false)}>Wish List</button> */}
+                    <button className="trip-header" onClick={() => setMyTrips(true)}>My Trips</button>
+                    <button className="trip-header" onClick={() => setMyTrips(false)}>Wish List</button>
                 </div>
             <div className="card">
-                {/* {myTrips ? {eachTrip} : {wishTrip}} */}
-                {eachTrip}
+                {myTrips ? eachTrip : wishTrip}
             </div>
             </div>
-            <div className="big-form-container">
-                <div className='form-container'>
-                    <p className="trip-header">Add a Trip!</p>
-                    <TripForm user={user} addNewTrip={addNewTrip}/>
+            {myTrips && (
+                <div className="big-form-container">
+                    <div className='form-container'>
+                        <p className="trip-header">Add a Trip!</p>
+                        <TripForm user={user} addNewTrip={addNewTrip}/>
+                    </div>
                 </div>
-            </div>
+            )}
+
         </div>
     )
 }
