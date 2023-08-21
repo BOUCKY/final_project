@@ -68,3 +68,19 @@
     /* color: #d49e83; */
     color: #b35c4b;
 }
+.add-to-wish-list{
+    font-size: 15px;
+    color: #7e4c42;
+    top: 350px;
+    cursor: pointer;
+    border: 1px solid #7e4c42;
+    border-radius: 2px;
+    color: #7e4c42;
+    height: 50px;
+    width: 100px;
+    margin: 15px 0px;
+    opacity: .6;
+}
+.add-to-wish-list:hover{
+    opacity: 1;
+}

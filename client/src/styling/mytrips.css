@@ -78,7 +78,7 @@
 .trip-delete-button{
     font-size: 20px;
     position: absolute; 
-    top: 565px;
+    top: 550px;
     cursor: pointer;
 }
 
@@ -215,4 +215,23 @@ textarea{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+/* ADD TO TRIPS FORM */
+.add-to-trip-form{
+    z-index: 1;
+    height: 500px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #7e4c42;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+}
+.add-btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

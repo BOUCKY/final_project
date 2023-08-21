@@ -37,7 +37,7 @@ function WishForm({user, place, addNewTrip, handleDelete, onClose}){
     };
 
     return(
-        <div className="trip-form">
+        <div className="add-to-trip-form">
             <form onSubmit={handleSubmit} className="form">
                 <label htmlFor="place-id">City:
                     <p className="input-text">{place.city}</p>
@@ -62,8 +62,9 @@ function WishForm({user, place, addNewTrip, handleDelete, onClose}){
                         value={formData.comments}
                     ></textarea>
                 </label>
-                <div className="btn-container">
+                <div className="add-btn-container">
                     <button type="submit" className="submit-btn">Submit</button>
+                    <button onClick={onClose} className="submit-btn">Cancel</button>
                 </div>
             </form>
         </div>

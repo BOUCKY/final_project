@@ -113,7 +113,6 @@ function MyTrips(){
                     </div>
                 </div>
             )}
-
         </div>
     )
 }

@@ -20,6 +20,16 @@ function WishCard({id, place, placeCity, placeState, placeCountry, placeImage, r
 
     return (
         <div className="wish-card">
+                {ShowWishForm && (
+                    <WishForm
+                        place={place}
+                        user={user}
+                        addNewTrip={addNewTrip}
+                        handleDelete={handleDelete}
+                        wish_id={id}
+                        onClose={() => setShowWishForm(false)}
+                    />
+                )}
             <div className="wish-card-content">
                 <div className="wish-card-info">
                     <img className='wish-pic'src={placeImage} alt={placeCity} />
@@ -31,16 +41,6 @@ function WishCard({id, place, placeCity, placeState, placeCountry, placeImage, r
                     </div>
                 </div>
             </div>
-            {ShowWishForm && (
-                <WishForm
-                    place={place}
-                    user={user}
-                    addNewTrip={addNewTrip}
-                    handleDelete={handleDelete}
-                    wish_id={id}
-                    onClose={() => setShowWishForm(false)}
-                />
-            )}
         </div>
     )
 
