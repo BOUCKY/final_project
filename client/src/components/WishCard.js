@@ -7,13 +7,13 @@ function WishCard({id, placeCity, placeState, placeCountry, placeImage, removeWi
     }
 
     return (
-        <div className="trip-card">
-            <div className="tripcard-content">
-                <div className="trip-card-info">
-                    <img className='trip-pic'src={placeImage} alt={placeCity} />
-                    {placeState ? <p className="trip-location">{placeCity}, {placeState}</p> : <p className="trip-location">{placeCity}</p>}
-                    <p className="trip-location">{placeCountry}</p>
-                    <button className='trip-delete-button' onClick={handleDelete}>🗑</button>
+        <div className="wish-card">
+            <div className="wish-card-content">
+                <div className="wish-card-info">
+                    <img className='wish-pic'src={placeImage} alt={placeCity} />
+                    {placeState ? <p className="wish-location">{placeCity}, {placeState}</p> : <p className="wish-location">{placeCity}</p>}
+                    <p className="wish-location">{placeCountry}</p>
+                    <button className='wish-delete-button' onClick={handleDelete}>🗑</button>
                 </div>
             </div>
         </div>

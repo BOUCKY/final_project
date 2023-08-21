@@ -15,9 +15,23 @@
 .trip-header{
     font-size: 35px;
     margin: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 5px;
     padding-top: 40px;
+    color: #7e4c42;
+    cursor: pointer;
 }
+.wish-header{
+    font-size: 35px;
+    margin: 20px;
+    padding-bottom: 5px;
+    padding-top: 40px;
+    color: #7e4c42;
+    cursor: pointer;
+}
+.underline{
+    border-bottom: 2px solid #7e4c42;
+}
+
 
 /* MY TRIP CARDS */
 .trip-card{
@@ -135,7 +149,6 @@ textarea{
 .submit-btn:hover{
     box-shadow: 0px 0px 20px 2px rgba(126, 76, 66, 0.5)
 }
-
 .shy-submit-btn{
     border: 1px solid #7e4c42;
     border-radius: 2px;
@@ -148,4 +161,42 @@ textarea{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+/* MY WISH CARDS */
+.wish-card{
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 20px;
+    border-left: 1px solid #7e4c42;
+    border-bottom: 1px solid #7e4c42;
+    border-radius: 2px;
+    background-color: white;
+    position: relative;
+}
+.wish-card:hover{
+    box-shadow: -5px 5px 10px 5px rgba(126, 76, 66, 0.5);
+}
+.wish-pic{
+    width: 100%;
+}
+.wish-card-info{
+    text-align: center;
+    height: 600px;
+}
+.wish-location{
+    font-weight: bold;
+}
+.wish-card-title{
+    padding-top: 20px;
+}
+.wish-delete-button{
+    font-size: 20px;
+    position: absolute; 
+    top: 500px;
+    cursor: pointer;
 }
