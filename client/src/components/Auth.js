@@ -65,7 +65,6 @@ function Auth({navigate}){
     return(
         <div className="authentication">
             <p className="welcome">Welcome to The Traveler's Club!</p>
-            {/* <img className='my-trails'src={mytrails} alt="My Trails" height={175}/> */}
             <p className="continue">To continue, please Login or Signup.</p>
             {isLogin === 0 ? 
             <div className="login-or-signup">
