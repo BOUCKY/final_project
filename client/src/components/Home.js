@@ -11,11 +11,24 @@ function Home(){
     }, [])
 
     const {user} = useContext(UserContext)
-
     const [places, setPlaces] = useState([])
     const [wishes, setWishes] = useState([])
+    const [inWishList, setInWishList] = useState(false)
+    const [userWishes, setUserWishes] = useState([])
     const [search, setSearch] = useState('')
 
+    useEffect(() => {
+        fetch('/wishes')
+            .then(r => r.json())
+            .then(data => setUserWishes(data))
+    }, [])
+
+    const checkWishList = (placeId) => {
+        if (userWishes.some(wish => wish.place_id === placeId)) {
+            console.log('Place', placeId, 'is in wishlist')
+            setInWishList(true)
+        }
+    }
 
     const addToWishList = (destination, userId) => {
         const newWish = {
@@ -55,6 +68,8 @@ function Home(){
             country={filteredPlaces.country}
             image={filteredPlaces.image}
             addToWishList={() => addToWishList(filteredPlaces, user.id)}
+            checkWishList={() => checkWishList(filteredPlaces.id)}
+            inWishList={inWishList}
         />
     ));
 
