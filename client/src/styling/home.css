@@ -84,3 +84,6 @@
 .add-to-wish-list:hover{
     opacity: 1;
 }
+.add-to-wish-list:active{
+    transform: translate(-2px, 2px);
+}

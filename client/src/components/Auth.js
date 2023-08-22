@@ -4,13 +4,12 @@ import '../styling/auth.css'
 
 function Auth({navigate }){
 
-    const {setUser} = useContext(UserContext)
+    const {user, setUser} = useContext(UserContext)
 
     useEffect(() => {
         document.title="Traveler's Club"
         document.body.style.backgroundColor="#7e4c42"
     }, [])
-
 
     const [ isLogin, setIsLogin ] = useState(0) // if 1 we'll fetch to .../login, if 2, we'll fetch to .../signup
     const [ formData, setFormData ] = useState({username:"",password:"", profile_image: null}) // holds login form data
@@ -60,6 +59,9 @@ function Auth({navigate }){
             })
     }
 
+    if(user){
+        navigate('/home')
+    } 
     return(
         <div className="authentication">
             <p className="welcome">Welcome to The Traveler's Club!</p>

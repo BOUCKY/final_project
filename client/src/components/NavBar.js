@@ -15,7 +15,6 @@ function NavBar( {navigate} ) {
       .then( r => {
         if (r.ok) {
           setUser(null)
-        //   window.location.href = '/'
           navigate('/')
         }
       })
