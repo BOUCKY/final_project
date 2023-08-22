@@ -11,7 +11,7 @@ function PlaceCard({city, state, country, image, addToWishList, inWishList}){
                 <div className="place-card-info">
                     {state ? <p className="place-location">{city}, {state}</p> : <p className="place-location">{city}</p>}
                     <p className="place-location">{country}</p>
-                    {inWishList ? null : <button className="add-to-wish-list" onClick={addToWishList}>Add to Wish List</button>}
+                    {inWishList ? <button id="added" className="add-to-wish-list">Added!</button> : <button className="add-to-wish-list" onClick={addToWishList}>Add to Wish List</button>}
                 </div>
             </div>
         </div>

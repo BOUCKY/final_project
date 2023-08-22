@@ -1,7 +1,7 @@
 import TripCard from "./TripCard"
 import TripForm from "./TripForm"
 import WishCard from "./WishCard"
-import React, { useState, useEffect, useContext } from "react"
+import { useState, useEffect, useContext } from "react"
 import '../styling/mytrips.css'
 import { UserContext } from "../context/user"
 
@@ -92,8 +92,7 @@ function MyTrips(){
             addNewTrip={addNewTrip}
         />
     ))
-        
-    
+
     return (
         <div className='trip-page'>
             <div className='trip-list'>

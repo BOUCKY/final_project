@@ -36,7 +36,6 @@ function App() {
         <Route path='home' element={<Home />} />
         <Route path='list' element={<Travel101 />} />
         <Route path='trips' element={<MyTrips />} />
-        <Route path='wish-list' element={<WishCard />} />
         <Route path='/user/:userId/trips' element={<UserTrips />} />
         <Route path='social' element={<Social />} />
       </Routes>

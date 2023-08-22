@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react"
 import { UserContext } from "../context/user"
 import '../styling/auth.css'
 
-function Auth({navigate }){
+function Auth({navigate}){
 
     const {user, setUser} = useContext(UserContext)
 
