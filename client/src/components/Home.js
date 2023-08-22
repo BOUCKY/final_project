@@ -25,9 +25,9 @@ function Home(){
 
     const checkWishList = (placeId) => {
         if (userWishes.some(wish => wish.place_id === placeId)) {
-            console.log('Place', placeId, 'is in wishlist')
-            setInWishList(true)
+            return true
         }
+        return false
     }
 
     const addToWishList = (destination, userId) => {
@@ -59,19 +59,29 @@ function Home(){
         .then(data => setPlaces(data))
     },[])
 
-    const filteredPlaces = places.filter(place => place.city && place.city.toLowerCase().startsWith(search.toLowerCase()))
-    .map(filteredPlaces => (
+    const updatePlaceListWithWishStatus = () => {
+        const placesWithWishStatus = places.map(place => ({
+            ...place,
+            inWishList: checkWishList(place.id),
+        }))
+        return placesWithWishStatus;
+    }
+
+    const filteredPlacesWithWishStatus = updatePlaceListWithWishStatus()
+
+    const filteredPlaces = filteredPlacesWithWishStatus
+    .filter(place => place.city && place.city.toLowerCase().startsWith(search.toLowerCase()))
+    .map(filteredPlace => (
         <PlaceCard
-            key={filteredPlaces.id}
-            city={filteredPlaces.city}
-            state={filteredPlaces.state}
-            country={filteredPlaces.country}
-            image={filteredPlaces.image}
-            addToWishList={() => addToWishList(filteredPlaces, user.id)}
-            checkWishList={() => checkWishList(filteredPlaces.id)}
-            inWishList={inWishList}
+            key={filteredPlace.id}
+            city={filteredPlace.city}
+            state={filteredPlace.state}
+            country={filteredPlace.country}
+            image={filteredPlace.image}
+            addToWishList={() => addToWishList(filteredPlace, user.id)}
+            inWishList={filteredPlace.inWishList}
         />
-    ));
+    ))
 
     return(
         <div className="place-list">
