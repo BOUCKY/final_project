@@ -32,7 +32,6 @@ function NavBar( {navigate} ) {
                 {/* <img className="my-trails" src={mytrails} alt='My Trails' height={75}/> */}
                 <p>The Traveler's Club</p>
             </div>
-            <div className="mobile-right-nav">
                 <div className="center-nav">
                     {user ? <><p className="hello">Welcome, {user.username}</p><img className="current-user-img" src={user.profile_image} alt={user.username}/></> : null}
                 </div>
@@ -48,7 +47,6 @@ function NavBar( {navigate} ) {
                     <li className="nav-bar-list"><NavLink className="nav-bar-link" onClick={handleNavClick} to="trips">My Trips</NavLink></li>
                     <li className="nav-bar-list"><button className="nav-bar-link" onClick={handleLogout}>Logout</button></li>
                 </div>
-            </div>
         </div>
 
     )

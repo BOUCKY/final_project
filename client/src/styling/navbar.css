@@ -203,6 +203,10 @@ button{
         display: none;
     }
     .center-nav{
-        padding-right: 20px;
+        margin-right: 25px;
+    }
+    .mobile{
+        margin-top: -45px;
+        margin-left: 75px;
     }
 }
