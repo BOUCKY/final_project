@@ -78,3 +78,131 @@ button{
     padding: 0;
     font-family: inherit;
 }
+
+.mobile {
+    color: #782528;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    padding-right: 25px;
+    display: none;
+}
+
+
+/* REACTIVENESS */
+@media screen and (max-width: 1900px){
+    .left-side-nav{
+        font-size: 30px;
+    }
+    .center-nav{
+        font-size: 18px;
+    }
+    .current-user-img{
+        height: 50px;
+        width: 50px;
+    }
+    .nav-bar-link{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1075px){
+    .left-side-nav{
+        font-size: 20px;
+    }
+    .center-nav{
+        font-size: 18px;
+    }
+    .current-user-img{
+        height: 50px;
+        width: 50px;
+    }
+    .nav-bar-link{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .left-side-nav{
+        font-size: 25px;
+    }
+    .center-nav{
+        font-size: 18px;
+        padding-left: 0;
+        padding-right: 75px;
+    }
+    .current-user-img{
+        height: 50px;
+        width: 50px;
+    }
+    .nav-bar.active{
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        margin-top: 418px;
+        margin-left: 90%;
+        padding-right: 0;
+        width: 10%;
+        background-color: white;
+        height: 300px;
+        box-shadow: -10px 10px 20px 0px rgba(68, 26, 24, 0.5);
+        z-index: 2;
+    }
+    .nav-bar{
+        display: none;
+    }
+    .nav-bar-list{
+        padding: 20px 0;
+        width: 80%;
+    }
+    .nav-bar-link{
+        text-align: center;
+    }
+    .mobile{
+        display: block;
+    }
+    .mobile:hover{
+        opacity: .5;
+    }
+}
+
+@media screen and (max-width: 775px){
+    .center-nav{
+        padding-right: 45px;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .left-side-nav{
+        font-size: 20px;
+    }
+    .center-nav{
+        padding-right: 35px;
+    }
+}
+@media screen and (max-width: 550px){
+    .header{
+        flex-wrap: nowrap;
+        flex-direction: column;
+        height: 125px;
+    }
+    .mobile-right-nav{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .left-side-nav{
+        padding-left: 0;
+    }
+    .hello{
+        display: none;
+    }
+    .center-nav{
+        padding-right: 20px;
+    }
+}
