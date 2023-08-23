@@ -235,3 +235,22 @@ textarea{
     display: flex;
     justify-content: space-between;
 }
+
+/* REACTIVENESS */
+@media screen and (max-width: 775px){
+    .card{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 615px){
+    .card{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 475px){
+    .card{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

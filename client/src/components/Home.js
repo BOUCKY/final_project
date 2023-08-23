@@ -20,7 +20,7 @@ function Home(){
     useEffect(() => {
         fetch('/wishes')
             .then(r => r.json())
-            .then(data => setUserWishes(data))
+            .then(data => setUserWishes(data))  //This is where I need to set it to just the user's wishes, not everyone's.
     }, [])
 
     const checkWishList = (placeId) => {
