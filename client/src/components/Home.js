@@ -24,7 +24,7 @@ function Home(){
                 const filteredWishes = data.filter(wish => wish.user_id === user?.id)
                 setUserWishes(filteredWishes)
             })
-    }, [])
+    }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
     const checkWishList = (placeId) => {
         if (userWishes.some(wish => wish.place_id === placeId)) {

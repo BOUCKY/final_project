@@ -61,6 +61,39 @@ function MyTrips(){
         )
     }
 
+    const updateRating = (tripId, newRating) => {
+        const tripIndex = trips.findIndex(trip => trip.id === tripId)
+        const updatedRating = parseInt(newRating)
+    
+        if (tripIndex !== -1) {
+          const updatedTrips = [...trips]
+          updatedTrips[tripIndex] = {
+            ...updatedTrips[tripIndex],
+            rating: updatedRating,
+          }
+          console.log(updatedTrips[tripIndex])
+          setTrips(updatedTrips)
+        }
+      }
+    
+      const updateComments = (tripId, newComments) => {
+        const tripIndex = trips.findIndex(trip => trip.id === tripId);
+    
+        if (tripIndex !== -1) {
+          const updatedTrips = [...trips]
+          updatedTrips[tripIndex] = {
+            ...updatedTrips[tripIndex],
+            comments: newComments,
+          }
+    
+          setTrips(updatedTrips)
+        }
+      };
+
+
+
+
+
     const eachTrip = trips.filter((trip) => trip.user_id === user?.id).map(filteredTrip => (
         <TripCard
             key={filteredTrip.id}
@@ -74,6 +107,8 @@ function MyTrips(){
             favorite={filteredTrip.favorite}
             handleFavorite={handleFavorite}
             removeTripCard={removeTripCard}
+            setRating={newRating => updateRating(filteredTrip.id, newRating)}
+            setComments={newComments => updateComments(filteredTrip.id, newComments)}
         />
     ))
 

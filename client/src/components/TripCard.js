@@ -1,3 +1,4 @@
+import React, { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as heart } from '@fortawesome/free-regular-svg-icons'
@@ -5,7 +6,7 @@ import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons'
 import { faStar as star } from '@fortawesome/free-regular-svg-icons'
 import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons'
 
-function TripCard({id, placeCity, placeState, placeCountry, placeImage, rating, comments, favorite, handleFavorite, removeTripCard}){
+function TripCard({id, placeCity, placeState, placeCountry, placeImage, rating, comments, favorite, handleFavorite, removeTripCard, setRating, setComments}){
 
     function handleDelete(){
         fetch(`/trips/${id}`,
@@ -39,13 +40,55 @@ function TripCard({id, placeCity, placeState, placeCountry, placeImage, rating, 
         return stars;
     }
 
-    const stars = generateStarIcons(rating)
+    const [editing, setEditing] = useState(false); // Add state for editing mode
+    const [editedRating, setEditedRating] = useState(rating); // Edited rating state
+    const [editedComments, setEditedComments] = useState(comments); // Edited comments state
+
+    const stars = generateStarIcons(editedRating)
+  
+    const handleEdit = () => {
+      setEditing(true);
+    };
+  
+    const handleSave = () => {
+      // Perform API call to update rating and comments
+      fetch(`/trips/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ rating: parseInt(editedRating), comments: editedComments }),
+      })
+        .then(response => response.json())
+        .then(updatedTrip => {
+          // Update the local state with the updated trip data
+          setRating(updatedTrip.rating);
+          setComments(updatedTrip.comments);
+          setEditing(false); // Exit editing mode after saving
+        })
+        .then(console.log(rating))
+        console.log("Save button clicked")
+
+    };
 
 
     return (
         <div className="trip-card">
             <div className="tripcard-content">
-                <div className="trip-card-info">
+            {editing ? (
+          <div className="edit-mode">
+            <input
+              type="number"
+              value={editedRating}
+              onChange={e => setEditedRating(e.target.value)}
+            />
+            <textarea
+              value={editedComments}
+              onChange={e => setEditedComments(e.target.value)}
+            />
+            <button onClick={handleSave}>Save</button>
+          </div>
+        ) : (
+          <div className="display-mode">
+            <div className="trip-card-info">
                     <img className='trip-pic'src={placeImage} alt={placeCity} />
                     {placeState ? <p className="trip-location">{placeCity}, {placeState}<button className='heart'onClick={(e) => handleFavorite(id,!favorite)}>{favorite ? filledHeart : outlinedHeart}</button></p> : <p className="trip-location">{placeCity}<button className='heart'onClick={(e) => handleFavorite(id,!favorite)}>{favorite ? filledHeart : outlinedHeart}</button></p>}
                     <p className="trip-location">{placeCountry}</p>
@@ -54,9 +97,12 @@ function TripCard({id, placeCity, placeState, placeCountry, placeImage, rating, 
                     <p className="trip-comments">"{comments}"</p>
                     <div className="trip-buttons">
                         <button className='trip-delete-button' onClick={handleDelete}>{trash}</button>
-                        <button className='trip-edit-button'>{edit}</button>
+                        <button className='trip-edit-button'onClick={handleEdit} >{edit}</button>
                     </div>
                 </div>
+          </div>
+        )}
+                
             </div>
         </div>
     )
