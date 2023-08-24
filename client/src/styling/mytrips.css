@@ -237,20 +237,131 @@ textarea{
 }
 
 /* REACTIVENESS */
-@media screen and (max-width: 775px){
+@media screen and (max-width: 1050px){
+    .trip-header{
+        font-size: 25px;
+    }
+    .wish-header{
+        font-size: 25px;
+    }
+    .trip-card{
+        height: 500px;
+    }
+    .trip-card-info{
+        height: 500px;
+        font-size: 15px;
+    }
+    .trip-delete-button{
+        top: 450px;
+    }
+    .wish-card-info{
+        height: 500px;
+    }
+    .buttons{
+        margin-top: 75px;
+    }
+}
+
+@media screen and (max-width: 950px){
     .card{
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media screen and (max-width: 615px){
+@media screen and (max-width: 675px){
     .card{
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and (max-width: 475px){
+@media screen and (max-width: 525px){
     .card{
         grid-template-columns: repeat(1, 1fr);
+    }
+    .trip-card{
+        height: 625px;
+    }
+    .trip-card-info{
+        height: 625px;
+        font-size: 15px;
+    }
+    .trip-delete-button{
+        top: 575px;
+    }
+    .wish-card{
+        height: 625px;
+    }
+    .wish-card-info{
+        height: 625px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .trip-header{
+        font-size: 20px;
+        text-align: center;
+    }
+    .wish-header{
+        font-size: 20px;
+        text-align: center;
+    }
+    .card{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .trip-list{
+        margin: 0 20px;
+    }
+    .trip-card{
+        height: 550px;
+    }
+    .trip-card-info{
+        height: 550px;
+        font-size: 15px;
+    }
+    .trip-delete-button{
+        top: 500px;
+    }
+    .wish-card{
+        height: 500px;
+    }
+    .wish-card-info{
+        height: 500px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .card{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .trip-card{
+        height: 475px;
+    }
+    .trip-card-info{
+        height: 475px;
+        font-size: 15px;
+    }
+    .trip-delete-button{
+        top: 425px;
+    }
+    .wish-card{
+        height: 475px;
+    }
+    .wish-card-info{
+        height: 475px;
+        font-size: 15px;
+    }
+    .buttons{
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .trip-header{
+        font-size: 18px;
+    }
+    .wish-header{
+        font-size: 18px;
     }
 }

@@ -114,9 +114,9 @@
     }
 }
 
-@media screen and (max-width: 925px){
-    .place-location{
-        font-size: 12px;
+@media screen and (max-width: 950px){
+    .card{
+        grid-template-columns: repeat(3, 1fr);
     }
     .add-to-wish-list{
         font-size: 10px;
@@ -124,19 +124,14 @@
         height: 30px;
     }
 }
-@media screen and (max-width: 775px){
-    .card{
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
-@media screen and (max-width: 615px){
+@media screen and (max-width: 675px){
     .card{
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media screen and (max-width: 475px){
+@media screen and (max-width: 525px){
     .card{
         grid-template-columns: repeat(1, 1fr);
     }
