@@ -55,3 +55,62 @@
     font-size: 18px;
     padding-left: 20px;
 }
+
+/* REACTIVENESS */
+@media screen and (max-width: 1050px){
+    .user-list-header{
+        font-size: 22px;
+    }
+    .search-input{
+        height: 30px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .card-username{
+        font-size: 20px;
+    }
+    .user-card-image{
+        height: 75px;
+        width: 75px;
+    }
+    .user-trips{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .social-card{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .card-username{
+        font-size: 15px;
+    }
+    .user-card-image{
+        height: 50px;
+        width: 50px;
+    }
+    .user-trips{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .social-card{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .user-card-list{
+        margin: 0px 20px;
+    }
+    .search-input{
+        font-size: 10px;
+        height: 20px;
+    }
+}
