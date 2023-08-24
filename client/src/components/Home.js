@@ -12,7 +12,9 @@ function Home(){
 
     const {user} = useContext(UserContext)
     const [places, setPlaces] = useState([])
+    // eslint-disable-next-line
     const [wishes, setWishes] = useState([])
+    // eslint-disable-next-line
     const [inWishList, setInWishList] = useState(false)
     const [userWishes, setUserWishes] = useState([])
     const [search, setSearch] = useState('')
