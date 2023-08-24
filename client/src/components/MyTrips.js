@@ -88,11 +88,7 @@ function MyTrips(){
     
           setTrips(updatedTrips)
         }
-      };
-
-
-
-
+      }
 
     const eachTrip = trips.filter((trip) => trip.user_id === user?.id).map(filteredTrip => (
         <TripCard

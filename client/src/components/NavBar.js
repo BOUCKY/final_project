@@ -9,6 +9,11 @@ function NavBar( {navigate} ) {
 
     const {user, setUser} = useContext(UserContext)
 
+    const [currentTab, setCurrentTab] = useState("home")
+    const handleTab = (tab) => {
+        setCurrentTab(tab)
+    }
+
     const [navClick, setNavClick] = useState(false)
     const handleNavClick = () => {
         setNavClick(!navClick)
@@ -41,10 +46,10 @@ function NavBar( {navigate} ) {
                     </button>
                 </div>
                 <div className={`nav-bar ${navClick ? 'active' : ''}`}>
-                    <li className="nav-bar-list"><NavLink className="nav-bar-link" onClick={handleNavClick} to="home">Home</NavLink></li>
-                    <li className="nav-bar-list"><NavLink className="nav-bar-link" onClick={handleNavClick} to="list">Travel 101</NavLink></li>
-                    <li className="nav-bar-list"><NavLink className="nav-bar-link" onClick={handleNavClick} to="social">Social</NavLink></li>
-                    <li className="nav-bar-list"><NavLink className="nav-bar-link" onClick={handleNavClick} to="trips">My Trips</NavLink></li>
+                    <li className="nav-bar-list"><NavLink className={`nav-bar-link ${currentTab === "home" ? 'underline' : ''}`} onClick={() => {handleNavClick(); handleTab('home');}} to="home">Home</NavLink></li>
+                    <li className="nav-bar-list"><NavLink className={`nav-bar-link ${currentTab === "list" ? 'underline' : ''}`} onClick={() => {handleNavClick(); handleTab('list');}} to="list">Travel 101</NavLink></li>
+                    <li className="nav-bar-list"><NavLink className={`nav-bar-link ${currentTab === "social" ? 'underline' : ''}`} onClick={() => {handleNavClick(); handleTab('social');}} to="social">Social</NavLink></li>
+                    <li className="nav-bar-list"><NavLink className={`nav-bar-link ${currentTab === "trips" ? 'underline' : ''}`} onClick={() => {handleNavClick(); handleTab('trips');}} to="trips">My Trips</NavLink></li>
                     <li className="nav-bar-list"><button className="nav-bar-link" onClick={handleLogout}>Logout</button></li>
                 </div>
         </div>
