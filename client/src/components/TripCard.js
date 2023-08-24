@@ -67,7 +67,11 @@ function TripCard({id, placeCity, placeState, placeCountry, placeImage, rating, 
         .then(console.log(rating))
         console.log("Save button clicked")
 
-    };
+    }
+
+    const cancel = () =>{
+        setEditing(false)
+    }
 
 
     return (
@@ -90,7 +94,7 @@ function TripCard({id, placeCity, placeState, placeCountry, placeImage, rating, 
             </label>
             <div className="buttons">
                 <button className='save'onClick={handleSave}>Save</button>
-                <button className='save'onClick={handleSave}>Cancel</button>
+                <button className='save'onClick={cancel}>Cancel</button>
             </div>
           </div>
         ) : (
