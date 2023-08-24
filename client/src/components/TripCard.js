@@ -75,16 +75,23 @@ function TripCard({id, placeCity, placeState, placeCountry, placeImage, rating, 
             <div className="tripcard-content">
             {editing ? (
           <div className="edit-mode">
+            <label htmlFor="rating">Rating:
             <input
               type="number"
               value={editedRating}
               onChange={e => setEditedRating(e.target.value)}
             />
+            </label>
+            <label htmlFor="comments">Comments:
             <textarea
               value={editedComments}
               onChange={e => setEditedComments(e.target.value)}
             />
-            <button onClick={handleSave}>Save</button>
+            </label>
+            <div className="buttons">
+                <button className='save'onClick={handleSave}>Save</button>
+                <button className='save'onClick={handleSave}>Cancel</button>
+            </div>
           </div>
         ) : (
           <div className="display-mode">
