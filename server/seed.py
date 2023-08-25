@@ -25,6 +25,7 @@ if __name__ == '__main__':
 
             places = []
             for i in range(1,len(rows)):
+                import ipdb
                 place = Place(
                     city = rows[i][0],
                     state = rows[i][1],
@@ -34,3 +35,5 @@ if __name__ == '__main__':
                 places.append(place)
             db.session.add_all(places)
             db.session.commit()
+            ipdb.set_trace()
+            print('hello')

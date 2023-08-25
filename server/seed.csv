@@ -51,3 +51,86 @@ Los Angeles,California,USA,http://127.0.0.1:5555/static/place_photos/los-angeles
 Marrakech,,Morocco,http://127.0.0.1:5555/static/place_photos/marrakech.jpg
 Hawaii,,USA,http://127.0.0.1:5555/static/place_photos/hawaii.jpg
 Boulder,Colorado,USA,http://127.0.0.1:5555/static/place_photos/boulder.jpg
+Beirut,,Lebanon,http://127.0.0.1:5555/static/place_photos/beirut.jpg
+Seville,,Spain,http://127.0.0.1:5555/static/place_photos/seville.jpg
+Krakow,,Poland,http://127.0.0.1:5555/static/place_photos/krakow.jpg
+Chiang Rai,,Thailand,http://127.0.0.1:5555/static/place_photos/chiang-rai.jpg
+Porto,,Portugal,http://127.0.0.1:5555/static/place_photos/porto.jpg
+Hoi An,,Vietnam,http://127.0.0.1:5555/static/place_photos/hoi-an.jpg
+Brussels,,Belgium,http://127.0.0.1:5555/static/place_photos/brussels.jpeg
+Cologne,,Germany,http://127.0.0.1:5555/static/place_photos/cologne.jpg
+Brisbane,Queensland,Australia,http://127.0.0.1:5555/static/place_photos/brisbane.jpg
+Bucharest,,Romania,http://127.0.0.1:5555/static/place_photos/bucharest.jpg
+Valencia,,Spain,http://127.0.0.1:5555/static/place_photos/valencia.jpg
+Yangon,,Myanmar,http://127.0.0.1:5555/static/place_photos/yangon.jpg
+Kuala Lumpur,,Malaysia,http://127.0.0.1:5555/static/place_photos/kuala.jpg
+Innsbruck,,Austria,http://127.0.0.1:5555/static/place_photos/innsbruck.jpg
+Bologna,,Italy,http://127.0.0.1:5555/static/place_photos/bologna.jpg
+Manila,,Philippines,http://127.0.0.1:5555/static/place_photos/manila.jpg
+Ljubljana,,Slovenia,http://127.0.0.1:5555/static/place_photos/ljubljana.jpg
+Riga,,Latvia,http://127.0.0.1:5555/static/place_photos/riga.jpg
+Luxembourg City,,Luxembourg,http://127.0.0.1:5555/static/place_photos/luxembourg.jpg
+Punta Cana,,Dominican Republic,http://127.0.0.1:5555/static/place_photos/punta-cana.jpg
+Santiago,,Chile,http://127.0.0.1:5555/static/place_photos/santiago.jpg
+Sofia,,Bulgaria,http://127.0.0.1:5555/static/place_photos/sofia.jpg
+Amman,,Jordan,http://127.0.0.1:5555/static/place_photos/amman.jpg
+Colombo,,Sri Lanka,http://127.0.0.1:5555/static/place_photos/colombo.jpg
+Algiers,,Algeria,http://127.0.0.1:5555/static/place_photos/algiers.jpg
+Panama City,,Panama,http://127.0.0.1:5555/static/place_photos/panama.jpg
+Kotor,,Montenegro,http://127.0.0.1:5555/static/place_photos/kotor.jpg
+Tashkent,,Uzbekistan,http://127.0.0.1:5555/static/place_photos/tashkent.jpg
+Ashgabat,,Turkmenistan,http://127.0.0.1:5555/static/place_photos/ashgabat.jpg
+Vilnius,,Lithuania,http://127.0.0.1:5555/static/place_photos/vilnius.jpeg
+Sarajevo,,Bosnia and Herzegovina,http://127.0.0.1:5555/static/place_photos/sarajevo.jpeg
+Osaka,,Japan,http://127.0.0.1:5555/static/place_photos/osaka.jpg
+New Delhi,,India,http://127.0.0.1:5555/static/place_photos/new-delhi.jpg
+Doha,,Qatar,http://127.0.0.1:5555/static/place_photos/doha.jpg
+Tbilisi,,Georgia,http://127.0.0.1:5555/static/place_photos/tbilisi.jpg
+Antwerp,,Belgium,http://127.0.0.1:5555/static/place_photos/antwerp.jpg
+Salzburg,,Austria,http://127.0.0.1:5555/static/place_photos/salzburg.jpg
+Nagoya,,Japan,http://127.0.0.1:5555/static/place_photos/nagoya.jpg
+Montgomery,Alabama,USA,http://127.0.0.1:5555/static/place_photos/montgomery.jpg
+Juneau,Alaska,USA,http://127.0.0.1:5555/static/place_photos/juneau.jpg
+Phoenix,Arizona,USA,http://127.0.0.1:5555/static/place_photos/pheonix.jpg
+Little Rock,Arkansas,USA,http://127.0.0.1:5555/static/place_photos/little-rock.jpg
+New Haven,Connecticut,USA,http://127.0.0.1:5555/static/place_photos/new-haven.jpg
+Dover,Delaware,USA,http://127.0.0.1:5555/static/place_photos/dover.jpg
+Orlando,Florida,USA,http://127.0.0.1:5555/static/place_photos/orlando.jpg
+Miami,Florida,USA,http://127.0.0.1:5555/static/place_photos/miami.jpg
+Atlanta,Georgia,USA,http://127.0.0.1:5555/static/place_photos/atlanta.jpg
+Boise,Idaho,USA,http://127.0.0.1:5555/static/place_photos/boise.jpeg
+Chicago,Illinois,USA,http://127.0.0.1:5555/static/place_photos/chicago.jpg
+Indianapolis,Indiana,USA,http://127.0.0.1:5555/static/place_photos/indianapolis.jpg
+Des Moines,Iowa,USA,http://127.0.0.1:5555/static/place_photos/des-moines.jpg
+Topeka,Kansas,USA,http://127.0.0.1:5555/static/place_photos/topeka.jpg
+Louisville,Kentucky,USA,http://127.0.0.1:5555/static/place_photos/louisville.jpg
+Baton Rouge,Louisiana,USA,http://127.0.0.1:5555/static/place_photos/baton-rouge.jpg
+Portland,Maine,USA,http://127.0.0.1:5555/static/place_photos/portland.jpg
+Baltimore,Maryland,USA,http://127.0.0.1:5555/static/place_photos/baltimore.jpg
+Grand Haven,Michigan,USA,http://127.0.0.1:5555/static/place_photos/grand-haven.jpg
+Minneapolis,Minnesota,USA,http://127.0.0.1:5555/static/place_photos/minneapolis.jpg
+Jackson,Mississippi,USA,http://127.0.0.1:5555/static/place_photos/jackson.jpg
+St. Louis,Missouri,USA,http://127.0.0.1:5555/static/place_photos/st-louis.jpg
+Helena,Montana,USA,http://127.0.0.1:5555/static/place_photos/helena.jpg
+Omaha,Nebraska,USA,http://127.0.0.1:5555/static/place_photos/omaha.jpg
+Portsmouth,New Hampshire,USA,http://127.0.0.1:5555/static/place_photos/portsmouth.jpg
+Hoboken,New Jersey,USA,http://127.0.0.1:5555/static/place_photos/hoboken.jpg
+Santa Fe,New Mexico,USA,http://127.0.0.1:5555/static/place_photos/santa-fe.jpg
+Raleigh,North Carolina,USA,http://127.0.0.1:5555/static/place_photos/raleigh.jpg
+Grand Forks,North Dakota,USA,http://127.0.0.1:5555/static/place_photos/grand-forks.jpg
+Columbus,Ohio,USA,http://127.0.0.1:5555/static/place_photos/columbus.jpg
+Oklahoma City,Oklahoma,USA,http://127.0.0.1:5555/static/place_photos/oklahoma-city.jpg
+Portland,Oregon,USA,http://127.0.0.1:5555/static/place_photos/portland-or.jpg
+Philadelphia,Pennsylvania,USA,http://127.0.0.1:5555/static/place_photos/philadelphia.jpg
+Providence,Rhode Island,USA,http://127.0.0.1:5555/static/place_photos/providence.jpg
+Myrtle Beach,South Carolina,USA,http://127.0.0.1:5555/static/place_photos/myrtle-beach.jpg
+Deadwood,South Dakota,USA,http://127.0.0.1:5555/static/place_photos/deadwood.jpg
+Nashville,Tennessee,USA,http://127.0.0.1:5555/static/place_photos/nashville.jpg
+Austin,Texas,USA,http://127.0.0.1:5555/static/place_photos/austin.jpg
+Salt Lake City,Utah,USA,http://127.0.0.1:5555/static/place_photos/salt-lake.jpg
+Burlington,Vermont,USA,http://127.0.0.1:5555/static/place_photos/burlington.jpg
+Richmond,Virginia,USA,http://127.0.0.1:5555/static/place_photos/richmond.jpg
+Seattle,Washington,USA,http://127.0.0.1:5555/static/place_photos/seattle.jpg
+Charleston,West Virginia,USA,http://127.0.0.1:5555/static/place_photos/charleston.jpg
+Madison,Wisconsin,USA,http://127.0.0.1:5555/static/place_photos/madison.jpg
+Jackson,Wyoming,USA,http://127.0.0.1:5555/static/place_photos/jackson-wy.jpg
