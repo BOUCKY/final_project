@@ -15,8 +15,6 @@ function Home(){
     const {user} = useContext(UserContext)
     const [places, setPlaces] = useState([])
     // eslint-disable-next-line
-    const [wishes, setWishes] = useState([])
-    // eslint-disable-next-line
     const [inWishList, setInWishList] = useState(false)
     const [userWishes, setUserWishes] = useState([])
     const [search, setSearch] = useState('')
@@ -32,7 +30,7 @@ function Home(){
                 const filteredWishes = data.filter(wish => wish.user_id === user?.id)
                 setUserWishes(filteredWishes)
             })
-    }, [])// eslint-disable-line react-hooks/exhaustive-deps
+    }, [user])// eslint-disable-line react-hooks/exhaustive-deps
 
     // Check to see if the place is in the current users' wish list. If it is, return true. If it's not, return false.
     const checkWishList = (placeId) => {
@@ -57,7 +55,7 @@ function Home(){
         })
         .then(response => response.json())
         .then(data => {
-            setWishes(prevWishes => [...prevWishes, data])
+            setUserWishes(prevWishes => [...prevWishes, data])
             console.log('Added to wish list:', newWish)
         })
         .catch(error => {
