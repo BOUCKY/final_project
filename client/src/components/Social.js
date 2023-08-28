@@ -5,21 +5,28 @@ import '../styling/social.css'
 
 function Social(){
 
+// -----PAGE TITLE-----
     useEffect(() => {
         document.title = "Traveler's Club | Social"
     }, [])
 
+// -----STATE-----
     const {user} = useContext(UserContext)
     const [allUsers, setAllUsers] = useState([])
+    const [search, setSearch] = useState('')
 
+// -----FETCH REQUESTS-----
     useEffect(() => {
         fetch('/users')
         .then(r => r.json())
         .then(data => setAllUsers(data))
     }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
-    const [search, setSearch] = useState('')
 
+// -----FUNCTIONALITY-----
+
+    // Go through the users and filter them so you see all the users except the current logged in user
+    // Creates the user cards but also is the search functionality
     const filteredUsers = user && user.id // Check if user is not null and has an 'id' property
     ? allUsers
         .filter(eachUser => eachUser.id !== user.id)

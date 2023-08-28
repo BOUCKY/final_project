@@ -7,15 +7,18 @@ import { UserContext } from "../context/user"
 
 function MyTrips(){
 
+// -----PAGE TITLE-----
     useEffect(() => {
         document.title="Traveler's Club | My Trips"
     }, [])
 
+// -----STATE-----
     const {user} = useContext(UserContext)
     const [trips, setTrips] = useState([])
     const [wishes, setWishes] = useState([])
     const [myTrips, setMyTrips] = useState(true)
 
+// -----FETCH REQUESTS-----
     useEffect(() => {
         fetch('/trips')
             .then(r => r.json())
@@ -49,6 +52,8 @@ function MyTrips(){
             })))
     }
 
+// -----FUCTIONALITY-----
+    // Delete functions
     const removeTripCard = (id) => {
         setTrips((currentTrips) => 
             currentTrips.filter((trip) => trip.id !== id)
@@ -61,6 +66,7 @@ function MyTrips(){
         )
     }
 
+    // Patch functions
     const updateRating = (tripId, newRating) => {
         const tripIndex = trips.findIndex(trip => trip.id === tripId)
         const updatedRating = parseInt(newRating)
@@ -90,6 +96,7 @@ function MyTrips(){
         }
       }
 
+    // Creates the trip and wish cards + renders them based on the current user
     const eachTrip = trips.filter((trip) => trip.user_id === user?.id).map(filteredTrip => (
         <TripCard
             key={filteredTrip.id}

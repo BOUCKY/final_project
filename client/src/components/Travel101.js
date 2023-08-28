@@ -5,6 +5,7 @@ import '../styling/travel101.css'
 
 function Travel101(){
 
+// -----PAGE TITLE-----
     useEffect(() => {
         document.title="Traveler's Club | Travel 101"
         document.body.style.backgroundColor="white"

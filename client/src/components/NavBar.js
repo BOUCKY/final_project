@@ -7,18 +7,22 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 function NavBar( {navigate} ) {    
 
+    // User state
     const {user, setUser} = useContext(UserContext)
 
+    // Tab state + toggle
     const [currentTab, setCurrentTab] = useState("home")
     const handleTab = (tab) => {
         setCurrentTab(tab)
     }
 
+    // Sense when a different tab is clickec
     const [navClick, setNavClick] = useState(false)
     const handleNavClick = () => {
         setNavClick(!navClick)
     }
 
+    // Logout function
     const handleLogout = () => {
     fetch("/logout",{
       method: "DELETE"
@@ -31,6 +35,7 @@ function NavBar( {navigate} ) {
       })
     }
     console.log(user)
+
     return (
         <div className="header">
             <div className="left-side-nav">

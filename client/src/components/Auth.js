@@ -4,16 +4,20 @@ import '../styling/auth.css'
 
 function Auth({navigate}){
 
-    const {user, setUser} = useContext(UserContext)
-
+// -----PAGE TITLE + COLOR-----
     useEffect(() => {
         document.title="Traveler's Club"
         document.body.style.backgroundColor="#7e4c42"
     }, [])
 
+// -----STATE-----
+    const {user, setUser} = useContext(UserContext)
     const [ isLogin, setIsLogin ] = useState(0) // if 1 we'll fetch to .../login, if 2, we'll fetch to .../signup
     const [ formData, setFormData ] = useState({username:"",password:"", profile_image: null}) // holds login form data
 
+// -----FUNCTIONALITY-----
+
+    // Login / Signup form, rendered conditionally
     function handleSubmit(e){
         e.preventDefault()
         const route = isLogin === 1 ? "login" : "signup"
@@ -59,6 +63,7 @@ function Auth({navigate}){
             })
     }
 
+    // If the user is still logged in when they open the page, navigate them to the Home page so the nav bar isn't displayed on the Auth page
     if(user){
         navigate('/home')
     } 
