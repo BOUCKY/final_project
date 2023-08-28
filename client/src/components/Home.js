@@ -75,7 +75,10 @@ function Home(){
     const filteredPlacesWithWishStatus = updatePlaceListWithWishStatus()
 
     const filteredPlaces = filteredPlacesWithWishStatus
-    .filter(place => place.city && place.city.toLowerCase().startsWith(search.toLowerCase()))
+    .filter(place => 
+        (place.city && place.city.toLowerCase().startsWith(search.toLowerCase())) ||
+        (place.state && place.state.toLowerCase().startsWith(search.toLowerCase())) ||
+        (place.country && place.country.toLowerCase().startsWith(search.toLowerCase())))
     .map(filteredPlace => (
         <PlaceCard
             key={filteredPlace.id}
