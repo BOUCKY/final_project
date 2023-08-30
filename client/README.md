@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# The Traveler's Club
+## Description
+Welcome to the Traveler's Club! As someone who highly values traveling, I designed this app especially, for those who love to travel. This app allows you to browse over 100 destinations all around the world and share which ones you've traveled to on your profile. You can also add destinations to your wish list! From your wishlist you can use the 'I Went There' function to add it to your trips along with your rating and comments. Along with your own profile, you can also see other users' profiles and their trips, and even search for your friends! But what travel app would be complete without the ultimate packing list and travel tips? Head on over to the 'Travel 101' page to explore the universal packing list and travel tips. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I've worked very hard to make this app a pleasant experience so I hope all of the travel lovers out there and enjoy!
 
-## Available Scripts
+## Instructions
+To experience this app, first fork and clone this repo. Once that's done, you'll need to cd into the client folder and run ```npm install```. Once that's done, cd over to the server folder and run ```pipenv install``` followed by ```pipenv install flask``` and finally ```pipenv shell```.
 
-In the project directory, you can run:
+Now that you have all of the dependencies installed, in the server folder, run ```python app.py``` to start the back-end server, then cd on over to the client folder and run ```npm start``` to start up the front-end server.
 
-### `npm start`
+Once both servers are up and running, you're all set to jump right in! You'll need to sign up with a username, password, and photo to access the content. After that, go wild!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Accomplishments
+* Setting up an additional table with relationships to implement the 'wish list' feature under the 'My Trips' page.
+* Clicking on someone's name or profile image and being brought to their page to see all of their trips along with their ratings and comments
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Challenges
+* Setting up the back-end database with all of the tables including one for the destinations, the users, the trips, and the wish list items, along with establishing relationships between them to be able to display content conditionally based on which user is currently logged in.
+* Implementing the conditionally rendered 'Add to Wish list' button on the destination cards in which a user can press the button to add a destination to their wish list, and then the button will change to 'Added!'.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+* Alexis Boucouvalas
