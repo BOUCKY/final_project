@@ -141,6 +141,7 @@ input{
     border: 1px solid #7e4c42;
     border-radius: 2px;
     color: #7e4c42;
+    font-family: inherit;
 }
 textarea{
     height: 55px;
@@ -150,6 +151,7 @@ textarea{
     border: 1px solid #7e4c42;
     border-radius: 2px;
     color: #7e4c42;
+    font-family: inherit;
 }
 .btn-container{
     width: 100%;
