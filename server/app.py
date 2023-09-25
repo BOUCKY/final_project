@@ -159,26 +159,39 @@ def login():
         return make_response({"error": "Incorrect password"}, 400)
 
 
-
 @app.route('/signup', methods=["POST"])
 def signup():
     # this is saving the form data because we are sending both JSON and file data(the image)
     username = request.form["username"]
     password = request.form["password"]
-    image_file = request.files['image']
 
-    # Handling Errors: this makes sure that the image file type is one of our allowed file types and makes sure that there is an image in the request
-    if 'image' not in request.files or image_file.filename == '':
-        return make_response({"error": "No image uploaded"}, 400)
-    if not allowed_file(image_file.filename):
-        return make_response({"error": "Invalid file type"}, 400)
-    
-    # getting the filename from the image_file metadata and then using werkzeug's secure_filename() to remove or replace any potentially harmful characters in the filename. Storing new sanitized filename in the filename variable.
-    filename = secure_filename(image_file.filename)
-    # combining multiple paths into a single path using python's os module. Helps ensure the appropriate path for different operating systems. 
-    image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-    # save the image file to image_path
-    image_file.save(image_path)
+    # Check if 'image' is present in request.files
+    if 'image' in request.files:
+        image_file = request.files['image']
+        if not allowed_file(image_file.filename):
+            return make_response({"error": "Invalid file type"}, 400)
+
+        # getting the filename from the image_file metadata and then using werkzeug's secure_filename() to remove or replace any potentially harmful characters in the filename. Storing new sanitized filename in the filename variable.
+        filename = secure_filename(image_file.filename)
+        # combining multiple paths into a single path using python's os module. Helps ensure the appropriate path for different operating systems. 
+        image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        # save the image file to image_path
+        image_file.save(image_path)
+    else:
+        # Set a default profile image URL if 'image' is not in request.files
+        default_image_url = 'http://127.0.0.1:5555/static/profile_photos/blank-user.png'
+        try:
+            new_user = User(
+                username=username,
+                password_hash=password,
+                profile_image = default_image_url
+            )
+            db.session.add(new_user)
+            db.session.commit()
+            session["user_id"] = new_user.id
+            return make_response(new_user.to_dict(only=('username','id', 'profile_image')), 201)
+        except ValueError as v_error:
+            return make_response({"error":[v_error]}, 400)
 
     try:
         new_user = User(
@@ -191,7 +204,8 @@ def signup():
         session["user_id"] = new_user.id
         return make_response(new_user.to_dict(only=('username','id', 'profile_image')), 201)
     except ValueError as v_error:
-        return make_response({"error":[v_error]}, 400)    
+        return make_response({"error":[v_error]}, 400)
+  
 
 @app.route('/authorized', methods=["GET"])
 def authorized():
