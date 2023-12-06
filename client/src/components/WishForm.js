@@ -13,7 +13,7 @@ function WishForm({user, place, addNewTrip, handleDelete, onClose}){
             place_id: place.id
         }
         console.log(newTripData)
-        fetch("/trips", {
+        fetch("https://travelers-club-backend.onrender.com/trips", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newTripData),

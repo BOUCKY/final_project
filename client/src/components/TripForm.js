@@ -7,7 +7,7 @@ function TripForm({user, place=null, addNewTrip}){
     const [placeCities, setPlaceCities] = useState([])
 
     useEffect(() => {
-        fetch('/places')
+        fetch('https://travelers-club-backend.onrender.com/places')
             .then(r => r.json())
             .then(places => setPlaceCities(places.map(place => place.city)))
     }, [])
@@ -24,7 +24,7 @@ function TripForm({user, place=null, addNewTrip}){
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log({...formData, user_id: user.id, place_id: placeCities.indexOf(inputPlace)+1})
-        fetch('/trips', {
+        fetch('https://travelers-club-backend.onrender.com/trips', {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({...formData, user_id: user.id, place_id: placeCities.indexOf(inputPlace)+1})

@@ -8,7 +8,7 @@ function UserTrips() {
   const [username, setUsername] = useState('')
 
   useEffect(() => {
-    fetch(`/users/${userId}/trips`)
+    fetch(`https://travelers-club-backend.onrender.com/users/${userId}/trips`)
       .then((response) => response.json())
       .then((data) => {
         // Assuming the API response is an object with a 'trips' property

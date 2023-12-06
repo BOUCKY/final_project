@@ -24,7 +24,7 @@ function NavBar( {navigate} ) {
 
     // Logout function
     const handleLogout = () => {
-    fetch("/logout",{
+    fetch("https://travelers-club-backend.onrender.com/logout",{
       method: "DELETE"
     })
       .then( r => {

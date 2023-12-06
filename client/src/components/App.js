@@ -20,7 +20,7 @@ function App() {
   }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchUser = () => {
-    fetch("/authorized")
+    fetch("https://travelers-club-backend.onrender.com/authorized")
       .then( r => {
         if (r.ok) {
           r.json().then( user => setUser(user) )

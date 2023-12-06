@@ -9,7 +9,7 @@ import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons'
 function TripCard({id, placeCity, placeState, placeCountry, placeImage, rating, comments, favorite, handleFavorite, removeTripCard, setRating, setComments}){
 
     function handleDelete(){
-        fetch(`/trips/${id}`,
+        fetch(`https://travelers-club-backend.onrender.com/trips/${id}`,
         {method: "DELETE",})
         .then(() => removeTripCard(id))
         
@@ -52,7 +52,7 @@ function TripCard({id, placeCity, placeState, placeCountry, placeImage, rating, 
   
     const handleSave = () => {
       // Perform API call to update rating and comments
-      fetch(`/trips/${id}`, {
+      fetch(`https://travelers-club-backend.onrender.com/trips/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ rating: parseInt(editedRating), comments: editedComments }),

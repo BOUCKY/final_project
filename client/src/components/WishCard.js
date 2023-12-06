@@ -12,7 +12,7 @@ function WishCard({id, place, placeCity, placeState, placeCountry, placeImage, r
     }
     
     function handleDelete(){
-        fetch(`/wishes/${id}`,
+        fetch(`https://travelers-club-backend.onrender.com/wishes/${id}`,
         {method: "DELETE",})
         .then(() => removeWishCard(id))  
     }

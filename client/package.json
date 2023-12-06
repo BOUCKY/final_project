@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://127.0.0.1:5555",
+  "proxy": "https://travelers-club-backend.onrender.com",
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",

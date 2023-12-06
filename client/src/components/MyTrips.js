@@ -20,13 +20,13 @@ function MyTrips(){
 
 // -----FETCH REQUESTS-----
     useEffect(() => {
-        fetch('/trips')
+        fetch('https://travelers-club-backend.onrender.com/trips')
             .then(r => r.json())
             .then(data => setTrips(data))
     }, [])
 
     useEffect(() => {
-        fetch('/wishes')
+        fetch('https://travelers-club-backend.onrender.com/wishes')
             .then(r => r.json())
             .then(data => setWishes(data))
     }, [])
@@ -36,7 +36,7 @@ function MyTrips(){
     }
 
     const handleFavorite = (tripId, updatedVal) => {
-        fetch(`trips/${tripId}` ,{
+        fetch(`https://travelers-club-backend.onrender.com/trips/${tripId}` ,{
             method: 'PATCH',
             headers:{"Content-Type" : "application/json"},
             body: JSON.stringify({favorite: updatedVal})
