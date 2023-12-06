@@ -179,7 +179,7 @@ def signup():
         image_file.save(image_path)
     else:
         # Set a default profile image URL if 'image' is not in request.files
-        default_image_url = 'http://127.0.0.1:5555/static/profile_photos/blank-user.png'
+        default_image_url = 'https://travelers-club-backend.onrender.com/static/profile_photos/blank-user.png'
         try:
             new_user = User(
                 username=username,
@@ -197,7 +197,7 @@ def signup():
         new_user = User(
             username=username,
             password_hash=password,
-            profile_image=f'http://127.0.0.1:5555/{image_path}'
+            profile_image=f'https://travelers-club-backend.onrender.com/{image_path}'
         )
         db.session.add(new_user)
         db.session.commit()
