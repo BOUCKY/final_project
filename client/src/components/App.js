@@ -9,7 +9,6 @@ import UserTrips from "./UserTrips";
 import Auth from './Auth'
 import Travel101 from './Travel101'
 import '../styling/app.css'
-import WishCard from "./WishCard";
 
 function App() {
   const {user, setUser} = useContext(UserContext)
