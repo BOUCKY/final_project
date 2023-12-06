@@ -220,7 +220,7 @@ def logout():
     del session['user_id']
     return make_response({"message": "logout successful"}, 204)
 
-@app.route('static/<path:path>')
+@app.route('/static/<path:path>')
 def send_static(path):
     return send_from_directory('static',path)
 
