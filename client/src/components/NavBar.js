@@ -16,7 +16,7 @@ function NavBar( {navigate} ) {
         setCurrentTab(tab)
     }
 
-    // Sense when a different tab is clickec
+    // Sense when a different tab is clicked
     const [navClick, setNavClick] = useState(false)
     const handleNavClick = () => {
         setNavClick(!navClick)
