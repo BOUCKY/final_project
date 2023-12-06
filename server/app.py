@@ -7,9 +7,9 @@ from flask import request, make_response, session, send_from_directory
 from flask_restful import Resource
 from werkzeug.utils import secure_filename
 import os
-from models import User, Trip, Place, Wish
+from server.models import User, Trip, Place, Wish
 
-from config import app, api, db, UPLOAD_FOLDER, ALLOWED_EXTENSIONS
+from server.config import app, api, db, UPLOAD_FOLDER, ALLOWED_EXTENSIONS
 
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
