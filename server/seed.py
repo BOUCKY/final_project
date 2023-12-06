@@ -9,8 +9,8 @@ import csv
 from faker import Faker
 
 # Local imports
-from server.app import app
-from server.models import db, User, Trip, Place
+from app import app
+from models import db, User, Trip, Place
 
 if __name__ == '__main__':
     fake = Faker()

@@ -16,7 +16,7 @@ function NavBar( {navigate} ) {
         setCurrentTab(tab)
     }
 
-    // Sense when a different tab is clicked
+    // Sense when a different tab is clickec
     const [navClick, setNavClick] = useState(false)
     const handleNavClick = () => {
         setNavClick(!navClick)
@@ -24,7 +24,7 @@ function NavBar( {navigate} ) {
 
     // Logout function
     const handleLogout = () => {
-    fetch("https://travelers-club-backend.onrender.com/logout",{
+    fetch("/logout",{
       method: "DELETE"
     })
       .then( r => {

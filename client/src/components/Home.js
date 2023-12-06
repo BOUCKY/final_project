@@ -24,7 +24,7 @@ function Home(){
 
     // get all of the wishes, then filter to see only the current user's
     useEffect(() => {
-        fetch('https://travelers-club-backend.onrender.com/wishes')
+        fetch('/wishes')
             .then(r => r.json())
             .then(data => {
                 const filteredWishes = data.filter(wish => wish.user_id === user?.id)
@@ -46,7 +46,7 @@ function Home(){
             user_id: userId,
             place_id: destination.id,
         }
-        fetch('https://travelers-club-backend.onrender.com/wishes', {
+        fetch('/wishes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ function Home(){
 
     // Get all of the places / destinations
     useEffect(() => {
-        fetch('https://travelers-club-backend.onrender.com/places')
+        fetch('/places')
         .then(r => r.json())
         .then(data => setPlaces(data))
     },[])

@@ -17,7 +17,7 @@ function Social(){
 
 // -----FETCH REQUESTS-----
     useEffect(() => {
-        fetch('https://travelers-club-backend.onrender.com/users')
+        fetch('/users')
         .then(r => r.json())
         .then(data => setAllUsers(data))
     }, [])// eslint-disable-line react-hooks/exhaustive-deps

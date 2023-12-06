@@ -39,7 +39,7 @@ function Auth({navigate}){
 
             contentType = undefined
         }
-        fetch(`https://travelers-club-backend.onrender.com/${route}`,{
+        fetch(`/${route}`,{
             method: "POST",
             headers: contentType ? {"Content-Type": contentType} : {},
             body: requestBody
@@ -65,7 +65,7 @@ function Auth({navigate}){
 
     // If the user is still logged in when they open the page, navigate them to the Home page so the nav bar isn't displayed on the Auth page
     if(user){
-        navigate('https://travelers-club-backend.onrender.com/home')
+        navigate('/home')
     } 
     return(
         <div className="authentication">
