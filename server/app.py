@@ -19,11 +19,11 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('https://travelers-club-backend.onrender.com/')
+@app.route('/')
 def index():
     return '<h1>Final Project Server!</h1>'
 
-@app.route('https://travelers-club-backend.onrender.com/users', methods=['GET', 'POST'])
+@app.route('/users', methods=['GET', 'POST'])
 def Users():
     if request.method == 'GET':
         users = [u.to_dict() for u in User.query.all()]
@@ -43,7 +43,7 @@ def Users():
         except ValueError as v_error:
             return make_response({'errors':[v_error]},400)
         
-@app.route('https://travelers-club-backend.onrender.com/users/<int:id>/trips', methods=['GET'])
+@app.route('/users/<int:id>/trips', methods=['GET'])
 def user_id(id):
     user = User.query.filter(User.id == id).first()
 
@@ -58,14 +58,14 @@ def user_id(id):
     
         return make_response(user_data, 200)
 
-@app.route('https://travelers-club-backend.onrender.com/places', methods=['GET'])
+@app.route('/places', methods=['GET'])
 def places():
     if request.method == 'GET':
         places = [p.to_dict() for p in Place.query.all()]
         return make_response(places, 200)
     
 
-@app.route('https://travelers-club-backend.onrender.com/trips', methods=['GET', 'POST'])
+@app.route('/trips', methods=['GET', 'POST'])
 def trips():
     if request.method == 'GET':
         trips = [t.to_dict() for t in Trip.query.all()]
@@ -87,7 +87,7 @@ def trips():
             return make_response({"errors": [str(e)]}, 400)
         
 
-@app.route('https://travelers-club-backend.onrender.com/trips/<int:id>', methods=['DELETE', 'PATCH'])
+@app.route('/trips/<int:id>', methods=['DELETE', 'PATCH'])
 def trip_id(id):
     trip = Trip.query.filter(Trip.id == id).first()
     
@@ -111,7 +111,7 @@ def trip_id(id):
         return make_response(trip.to_dict(), 200)
     
 
-@app.route('https://travelers-club-backend.onrender.com/wishes', methods=['GET', 'POST'])
+@app.route('/wishes', methods=['GET', 'POST'])
 def wishes():
     if request.method == 'GET':
         wishes = [w.to_dict() for w in Wish.query.all()]
@@ -131,7 +131,7 @@ def wishes():
             return make_response({"errors": [str(e)]}, 400)
         
 
-@app.route('https://travelers-club-backend.onrender.com/wishes/<int:id>', methods=['DELETE',])
+@app.route('/wishes/<int:id>', methods=['DELETE',])
 def wish_id(id):
     wish = Wish.query.filter(Wish.id == id).first()
     
@@ -145,7 +145,7 @@ def wish_id(id):
 
 
 # user login and auth
-@app.route('https://travelers-club-backend.onrender.com/login', methods=["POST"])
+@app.route('/login', methods=["POST"])
 def login():
     data = request.get_json()
     user = User.query.filter_by(username = data["username"]).first()
@@ -159,7 +159,7 @@ def login():
         return make_response({"error": "Incorrect password"}, 400)
 
 
-@app.route('https://travelers-club-backend.onrender.com/signup', methods=["POST"])
+@app.route('/signup', methods=["POST"])
 def signup():
     # this is saving the form data because we are sending both JSON and file data(the image)
     username = request.form["username"]
@@ -207,7 +207,7 @@ def signup():
         return make_response({"error":[v_error]}, 400)
   
 
-@app.route('https://travelers-club-backend.onrender.com/authorized', methods=["GET"])
+@app.route('/authorized', methods=["GET"])
 def authorized():
     try:
         user = User.query.filter_by(id=session.get("user_id")).first()
@@ -215,12 +215,12 @@ def authorized():
     except:
         return make_response({"error": "Please log in or sign up"}, 401)
 
-@app.route('https://travelers-club-backend.onrender.com/logout', methods=["DELETE"])
+@app.route('/logout', methods=["DELETE"])
 def logout():
     del session['user_id']
     return make_response({"message": "logout successful"}, 204)
 
-@app.route('https://travelers-club-backend.onrender.com/static/<path:path>')
+@app.route('static/<path:path>')
 def send_static(path):
     return send_from_directory('static',path)
 
